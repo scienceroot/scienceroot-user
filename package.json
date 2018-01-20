@@ -8,12 +8,15 @@
   "typings": "./user.d.ts",
   "author": "Sven Seemann",
   "bugs": {
-    "url": "",
+    "url": "https://github.com/scienceroot/scienceroot-user/issues",
     "email": "sven.seemann@scienceroot.de"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/scienceroot/scienceroot-user"
+  },
+  "publishConfig": {
+    "registry": "http://npm.scienceroots.com"
   },
   "engines": {
     "node": ">= 6.9.0",
