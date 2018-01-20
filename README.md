@@ -18,9 +18,10 @@ See the complete demo sources in `src/demo/app`.
 ```typescript
 @NgModule({
   imports:      [
-    ScrUserCoreModule
+    RouterModule.forRoot([]),
+    ScrUserRoutesModule
   ],
-  declarations: [ SomeComponent ],
+  declarations: [ AppComponent ],
 })
 export class AppModule {
 
