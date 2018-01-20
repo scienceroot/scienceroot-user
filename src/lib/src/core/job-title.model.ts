@@ -22,6 +22,6 @@ export const SCR_USER_JOB_TITLES: ScrUserJobTitle[] = [
 ];
 
 export interface ScrUserJobTitle {
-  name: string;
+  name?: string;
   displayName: string;
 }

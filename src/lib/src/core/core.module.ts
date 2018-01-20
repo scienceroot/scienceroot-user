@@ -1,5 +1,6 @@
 import {NgModule} from "@angular/core";
 import {ScrUserNewModule} from "../new/new.module";
+import {ScrUserService} from "./user.service";
 
 @NgModule({
   imports: [
@@ -8,7 +9,9 @@ import {ScrUserNewModule} from "../new/new.module";
   declarations: [],
   exports: [
   ],
-  providers: []
+  providers: [
+    ScrUserService
+  ]
 })
 export class ScrUserCoreModule {
 

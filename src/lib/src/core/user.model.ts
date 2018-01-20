@@ -1,3 +1,6 @@
+import {ScrUserJob} from "./job.model";
+import {ScrAddress} from "./address.model";
+
 export const SCR_USER_TYPES: ScrUserType[] = [
   {
     name: 'journal',
@@ -16,11 +19,15 @@ export const SCR_USER_TYPES: ScrUserType[] = [
 export class ScrUser {
 
   constructor(
-    public firstname?: string,
+    public id: string,
+    public forename?: string,
     public lastname?: string,
+    public address?: ScrAddress,
+    public username?: string,
     public email?: string,
     public password?: string,
-    public type?: ScrUserType
+    public type?: ScrUserType,
+    public jobs?: ScrUserJob[]
   ) {
   }
 }

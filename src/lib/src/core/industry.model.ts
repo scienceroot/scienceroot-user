@@ -22,6 +22,6 @@ export const SCR_USER_INDUSTRIES: ScrUserIndustry[] = [
 ]
 
 export interface ScrUserIndustry {
-  name: string;
+  name?: string;
   displayName: string;
 }
