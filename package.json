@@ -64,7 +64,7 @@
     "rollup-plugin-uglify": "2.0.x",
     "rxjs": "5.5.x",
     "systemjs": "0.20.x",
-    "typescript": "2.5.x",
+    "typescript": "2.4.x",
     "zone.js": "0.8.x"
   },
   "dependencies": {}
