@@ -4,7 +4,7 @@ import { RouterModule }      from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import {ScrUserCoreModule} from "user";
+import {ScrUserRoutesModule} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 
@@ -17,7 +17,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'user/new' }
     ]),
-    ScrUserCoreModule
+    ScrUserRoutesModule
   ],
   declarations: [
     AppComponent,
