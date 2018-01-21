@@ -15,7 +15,7 @@ import {ScrUser} from "../../../core/user.model";
       </div>
       <ng-container *ngFor="let job of user.jobs">
         <div class="job">
-            <span class="mat-subheading-1">
+            <span class="mat-subheading-2 scr-primary-text">
                {{ job.title?.displayName }}
             </span>
           <span class="mat-body-1 job--spacer">
