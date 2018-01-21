@@ -3,13 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'demo-app',
   template: `
-    <div class="menu">
-      <div class="logo-container">
+    <div  fxLayout="row"
+          class="menu">
+      <div  fxFlex="64px"
+            class="menu-item logo-container">
         <img src="" alt="" />
       </div>
-      <div fxLayout="row">
-        <div fxFlex="">
-
+      <div  class="menu-item"
+            fxFlex="">
+        <div  fxLayout="row"
+              fxLayoutAlign="end center">
+          <div fxFlex="150px">
+            <scr-user-details-link>
+            </scr-user-details-link>
+          </div>
         </div>
       </div>
     </div>
@@ -27,11 +34,16 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     .menu {
-      padding: 8px 24px;
+      padding-left: 24px;
+      height: 64px;
       background-color: #B1B7C1;
     }
 
-    .menu .logo-container {
+    .menu .menu-item.logo-container {
+      padding: 8px 0; 
+    }
+    
+    .menu .menu-item.logo-container img {
       height: 48px;
       width: 48px;
     }
