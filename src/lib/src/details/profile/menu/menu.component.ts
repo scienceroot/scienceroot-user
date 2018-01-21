@@ -8,7 +8,8 @@ import {ScrUser} from "../../../core/user.model";
       <a mat-tab-link
          *ngFor="let link of links"
          [routerLink]="link.path"
-         routerLinkActive #rla="routerLinkActive"
+         routerLinkActive 
+         #rla="routerLinkActive"
          [active]="rla.isActive">
         {{link.displayName}}
       </a>
@@ -28,13 +29,13 @@ export class ScrUserProfileMenuComponent implements OnInit {
     this.links = [
       {
         displayName: 'Information',
-        path: ['user', this.user.id, 'info']
+        path: ['/user', this.user.id, 'info']
       }, {
         displayName: 'Activities',
-        path: ['user', this.user.id, 'activities']
+        path: ['/user', this.user.id, 'activities']
       }, {
         displayName: 'Documents',
-        path: ['user', this.user.id, 'jobs']
+        path: ['/user', this.user.id, 'documents']
       }
     ]
   }
