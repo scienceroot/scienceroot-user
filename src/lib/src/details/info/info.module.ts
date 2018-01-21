@@ -2,13 +2,13 @@ import {NgModule} from "@angular/core";
 import {ScrUserDetailsInfoComponent} from "./info.component";
 import {CommonModule} from "@angular/common";
 import {ScrUserProfileModule} from "../profile/profile.module";
-import {MatIconModule} from "@angular/material";
+import {ScrUserDetailsInfoJobsModule} from "./jobs/jobs.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    MatIconModule,
-    ScrUserProfileModule
+    ScrUserProfileModule,
+    ScrUserDetailsInfoJobsModule
   ],
   declarations: [
     ScrUserDetailsInfoComponent
