@@ -6,15 +6,20 @@ import {ActivatedRoute} from "@angular/router";
   selector: '',
   template: `
     <scr-user-profile [user]="user">
-      <div>
+      <div class="info-section">
+        <scr-user-details-info-interests [user]="user">
+        </scr-user-details-info-interests>
+      </div>
+      <div class="info-section">
         <scr-user-details-info-jobs [user]="user">
         </scr-user-details-info-jobs>
       </div>
-      
     </scr-user-profile>
   `,
   styles: [`
-    
+    .info-section {
+      padding: 24px 0;
+    }
   `]
 })
 export class ScrUserDetailsInfoComponent {

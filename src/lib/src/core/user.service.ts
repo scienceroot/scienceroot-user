@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {SCR_USER_TYPES, ScrUser} from "./user.model";
 import {ScrUserJob} from "./job.model";
 import {ScrAddress} from "./address.model";
+import {ScrUserFieldOfInterest} from "./interest.model";
 
 const SCR_USER_MOCK: ScrUser = new ScrUser(
   'abcdefg',
@@ -45,6 +46,12 @@ const SCR_USER_MOCK: ScrUser = new ScrUser(
         displayName: 'Aerospace'
       }
     )
+  ],
+  [
+    new ScrUserFieldOfInterest('Mathematics'),
+    new ScrUserFieldOfInterest('Physics'),
+    new ScrUserFieldOfInterest('Computer Science'),
+    new ScrUserFieldOfInterest('Linear Algebra'),
   ]
 );
 
