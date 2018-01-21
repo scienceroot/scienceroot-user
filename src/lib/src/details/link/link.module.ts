@@ -1,20 +1,24 @@
 import {NgModule} from "@angular/core";
-import {ScrUserDetailsLinkComponent} from "./link.component";
+import {ScrUserDetailsLinkContainerComponent} from "./link-container.component";
 import {CommonModule} from "@angular/common";
-import {MatButtonModule} from "@angular/material";
+import {MatButtonModule, MatIconModule, MatMenuModule} from "@angular/material";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {ScrUserDetailsLinkLoginModule} from "./login/login.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    ScrUserDetailsLinkLoginModule
   ],
   declarations: [
-    ScrUserDetailsLinkComponent
+    ScrUserDetailsLinkContainerComponent
   ],
   exports: [
-    ScrUserDetailsLinkComponent
+    ScrUserDetailsLinkContainerComponent
   ],
   providers: []
 })
