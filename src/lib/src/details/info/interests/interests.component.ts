@@ -17,7 +17,7 @@ import {ScrUser} from "../../../core/user.model";
         <mat-chip-list [ngClass.xs]="'mat-chip-list-stacked'">
           <mat-chip *ngFor="let interest of user.interests"
                     [selected]="true"
-                    color="accent">
+                    color="primary">
             <span>
               {{ interest.displayName }}
             </span>
