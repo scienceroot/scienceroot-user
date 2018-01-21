@@ -34,7 +34,7 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     .menu {
-      padding-left: 24px;
+      padding: 0 24px;
       height: 64px;
       background-color: #B1B7C1;
     }
