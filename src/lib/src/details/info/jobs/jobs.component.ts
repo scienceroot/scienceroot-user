@@ -15,16 +15,16 @@ import {ScrUser} from "../../../core/user.model";
       </div>
       <ng-container *ngFor="let job of user.jobs">
         <div class="job">
-            <span class="mat-title">
+            <span class="mat-subheading-1">
                {{ job.title?.displayName }}
             </span>
-          <span class="mat-subheading-1 job--spacer">
+          <span class="mat-body-1 job--spacer">
               at
             </span>
-          <span class="mat-title">
+          <span class="mat-subheading-1">
               {{ job.employer }}
             </span>
-          <span class="mat-subheading-1">
+          <span class="mat-body-2">
               ({{ job.industry?.displayName }})
             </span>
         </div>
