@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import {ScrUserDetailsLinkModule, ScrUserRoutesModule} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {ScrAuthenticationLoginComponent, ScrAuthenticationTokenStoreConfig} from "@scienceroot/security";
 
 @NgModule({
   imports:      [
@@ -15,7 +16,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'user/new' }
+      { path: '', pathMatch: 'full', redirectTo: 'user/new' },
+      { path: 'login', component: ScrAuthenticationLoginComponent }
     ]),
     ScrUserRoutesModule,
     ScrUserDetailsLinkModule
@@ -29,6 +31,7 @@ export class AppModule {
 
 
   constructor() {
+    new ScrAuthenticationTokenStoreConfig('scrAuthToken').save();
   }
 
 
