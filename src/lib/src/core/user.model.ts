@@ -22,9 +22,9 @@ export class ScrUser {
   public static fromObj(obj: any): ScrUser {
     return new ScrUser(
       obj.username,
-      obj.email,
+      obj.mail,
       obj.password,
-      obj.id,
+      obj.uid,
       obj.forename,
       obj.lastname,
       obj.address,
@@ -36,9 +36,9 @@ export class ScrUser {
 
   constructor(
     public username?: string,
-    public email?: string,
+    public mail?: string,
     public password?: string,
-    public id?: string,
+    public uid?: string,
     public forename?: string,
     public lastname?: string,
     public address?: ScrAddress,
@@ -49,7 +49,7 @@ export class ScrUser {
   }
 
   public isValid(): boolean {
-    return !!this.forename && !!this.lastname && !!this.username && !!this.email;
+    return !!this.forename && !!this.lastname && !!this.username && !!this.mail;
   }
 }
 

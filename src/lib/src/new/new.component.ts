@@ -56,7 +56,7 @@ import {FormControl, Validators} from "@angular/forms";
             <div fxFlex="">
               <mat-form-field>
                 <input  matInput=""
-                        [(ngModel)]="user.email"
+                        [(ngModel)]="user.mail"
                         [formControl]="mailFormControl"
                         placeholder="E-Mail"
                         type="email" />
@@ -160,7 +160,11 @@ export class ScrUserNewComponent {
 
   public save() {
     if(!!this.acceptedTerms) {
-      this.userService.create(this.user).then(res => console.log(res));
+      this.userService.create(this.user)
+        .then((user: ScrUser) => {
+          console.log(user);
+          this.router.navigate(['/user', user.uid])
+        });
     } else {
       this.acceptedTermsError = true;
     }
