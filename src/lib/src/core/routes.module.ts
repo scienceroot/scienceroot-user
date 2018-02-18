@@ -7,6 +7,7 @@ import {ScrTermsAndConditionsModule} from "../terms/terms.module";
 import {ScrUserResolver} from "./user.resolver";
 import {ScrUserDetailsInfoComponent} from "../details/info/info.component";
 import {ScrUserDetailsModule} from "../details/details.module";
+import {ScrAuthenticationGuard, ScrAuthenticationModule} from "@scienceroot/security";
 
 const USER_ROUTES: Route[] = [
   {
@@ -26,6 +27,7 @@ const USER_ROUTES: Route[] = [
       },
       {
         path: ':userId',
+        canActivate: [ScrAuthenticationGuard],
         children: [
           {
             path: 'info',
@@ -42,6 +44,7 @@ const USER_ROUTES: Route[] = [
 
 @NgModule({
   imports: [
+    ScrAuthenticationModule,
     ScrUserCoreModule,
     ScrUserDetailsModule,
     ScrTermsAndConditionsModule,
