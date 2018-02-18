@@ -87,6 +87,10 @@
   version "1.0.0-beta.2"
   resolved "http://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.0-beta.2.tgz#ab68b0a106e8eac604a2316ed6e190bd9126b471"
 
+"@scienceroot/security@^1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.0-beta.1.tgz#3034b15dc9dc1e653b3a00d25d3e53384a6dd25e"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

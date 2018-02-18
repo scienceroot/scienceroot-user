@@ -57,6 +57,7 @@
     "@angular/platform-browser-dynamic": "5.1.x",
     "@angular/router": "5.1.x",
     "@scienceroot/design": "1.0.0-beta.2",
+    "@scienceroot/security": "^1.0.0-beta.1",
     "camelcase": "4.1.x",
     "concurrently": "3.5.x",
     "core-js": "2.5.x",
