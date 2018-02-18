@@ -5,7 +5,10 @@ import {MatCheckboxChange} from "@angular/material";
 @Component({
   selector: 'scr-user-new-type',
   template: `
-    <div  fxLayout="column"
+    <span class="mat-headline">
+      Account type
+    </span>
+    <div  fxLayout="row"
           fxLayoutGap="24px">
      <div *ngFor="let type of userTypes"
           fxFlex="">
@@ -24,11 +27,11 @@ import {MatCheckboxChange} from "@angular/material";
 })
 export class ScrUserNewTypeComponent implements OnInit {
 
+  @Output() typeChange: EventEmitter<ScrUserType> = new EventEmitter();
+
   public readonly userTypes: ScrUserType[] = SCR_USER_TYPES;
 
   public activeType: ScrUserType = this.userTypes[0];
-
-  @Output() typeChange: EventEmitter<ScrUserType> = new EventEmitter();
 
   ngOnInit(): void {
     this.typeChange.emit(this.activeType);

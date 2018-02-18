@@ -20,13 +20,13 @@ export const SCR_USER_TYPES: ScrUserType[] = [
 export class ScrUser {
 
   constructor(
+    public username?: string,
+    public email?: string,
+    public password?: string,
     public id?: string,
     public forename?: string,
     public lastname?: string,
     public address?: ScrAddress,
-    public username?: string,
-    public email?: string,
-    public password?: string,
     public type?: ScrUserType,
     public jobs?: ScrUserJob[],
     public interests?: ScrUserFieldOfInterest[]

@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {ScrUser, ScrUserType} from "../core/user.model";
 import {Router} from "@angular/router";
+import {ScrUserService} from "../core/user.service";
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: '',
@@ -12,20 +14,87 @@ import {Router} from "@angular/router";
       </span>
       </div>
       <div class="form">
-        <div  class="step"
-              *ngIf="activeStep === steps.TYPE">
-          <scr-user-new-type (typeChange)="onTypeSelect($event)">
+        <div  class="step">
+          <scr-user-new-type (typeChange)="this.user.type = $event">
           </scr-user-new-type>
         </div>
-        <div class="step"
-             *ngIf="activeStep === steps.USER_DATA">
-          <scr-user-new-data>
-          </scr-user-new-data>
-        </div>
-        <div  class="step"
-              *ngIf="activeStep === steps.INFORMATION">
-          <scr-user-new-info>
-          </scr-user-new-info>
+        <div class="step">
+          <div  fxLayout="column"
+                fxLayoutGap="24px">
+            <div fxFlex="">
+        <span class="mat-headline">
+          Personal information
+        </span>
+              <div  fxLayout="row"
+                    fxLayout.xs="column"
+                    fxLayoutGap="24px"
+                    fxLayoutGap.xs="8px">
+                <div fxFlex="">
+                  <mat-form-field>
+                    <input  matInput=""
+                            [(ngModel)]="user.forename"
+                            [formControl]="forenameFormControl"
+                            placeholder="Forename" />
+                    <mat-error *ngIf="forenameFormControl.hasError('required')">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxFlex="">
+                  <mat-form-field >
+                    <input  matInput=""
+                            [(ngModel)]="user.lastname"
+                            [formControl]="lastnameFormControl"
+                            placeholder="Lastname" />
+                    <mat-error *ngIf="lastnameFormControl.hasError('required')">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex="">
+              <mat-form-field>
+                <input  matInput=""
+                        [(ngModel)]="user.email"
+                        [formControl]="mailFormControl"
+                        placeholder="E-Mail"
+                        type="email" />
+                <mat-error *ngIf="mailFormControl.hasError('required')">
+                  E-Mail is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="mailFormControl.hasError('email')">
+                  E-Mail is <strong>invalid</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <span class="mat-headline">
+              Credentials
+            </span>
+            <div fxFlex="">
+              <mat-form-field>
+                <input  matInput=""
+                        [(ngModel)]="user.username"
+                        [formControl]="usernameFormControl"
+                        placeholder="Username" />
+                <mat-error *ngIf="usernameFormControl.hasError('required')">
+                  Username is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <scr-user-new-password (passwordChange)="user.password = $event">
+              </scr-user-new-password>
+            </div>
+            <div  fxFlex=""
+                  class="accept-conditions">
+              <scr-user-new-terms (checkedChange)="acceptedTerms = $event">
+              </scr-user-new-terms>
+              <mat-error *ngIf="acceptedTermsError">
+                You need to agree to our Terms and Conditions
+              </mat-error>
+            </div>
+          </div>
         </div>
       </div>
       <div  fxLayout="row"
@@ -39,7 +108,7 @@ import {Router} from "@angular/router";
         <div fxFlex="100px">
           <button mat-raised-button=""
                   color="accent"
-                  (click)="nextStep(activeStep)">
+                  (click)="save()">
             Next
           </button>
         </div>
@@ -61,47 +130,40 @@ import {Router} from "@angular/router";
     }
     
     .step {
-      min-height: 300px;
+      margin: 32px 0;
     }
+
+    mat-form-field, input { width: 100%; }
   `]
 })
 export class ScrUserNewComponent {
 
-  public steps = ScrUserNewStep;
-  public activeStep: ScrUserNewStep = ScrUserNewStep.TYPE;
-
   public user: ScrUser = new ScrUser();
 
-  constructor(private router: Router) {
-  }
+  public acceptedTerms: boolean = false;
+  public acceptedTermsError: boolean = false;
 
-  public onTypeSelect(selected: ScrUserType) {
-    this.user.type = selected;
+  public forenameFormControl = new FormControl('',[ Validators.required ]);
+  public lastnameFormControl = new FormControl('',[ Validators.required ]);
+  public mailFormControl = new FormControl('',[ Validators.required, Validators.email ]);
+  public usernameFormControl = new FormControl('',[ Validators.required ]);
+
+  constructor(
+    private router: Router,
+    private userService: ScrUserService
+  ) {
   }
 
   public cancel() {
     this.router.navigate(['/']);
   }
 
-  public nextStep(currentStep: ScrUserNewStep) {
-    switch (currentStep) {
-      case ScrUserNewStep.TYPE:
-        console.log(this.user)
-        if(!!this.user.type) {
-          this.activeStep = ScrUserNewStep.USER_DATA;
-        }
-        break;
-      case ScrUserNewStep.USER_DATA:
-        this.activeStep = ScrUserNewStep.INFORMATION;
-        break;
-      case ScrUserNewStep.INFORMATION:
-        break;
+  public save() {
+    if(!!this.acceptedTerms) {
+      console.log(this.user)
+      //this.userService.create(this.user).then(res => console.log(res));
+    } else {
+      this.acceptedTermsError = true;
     }
   }
-}
-
-export enum ScrUserNewStep {
-  TYPE = 'TYPE',
-  USER_DATA = 'USER_DATA',
-  INFORMATION = 'INFORMATION'
 }

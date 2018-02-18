@@ -1,67 +1,27 @@
 import {Injectable} from "@angular/core";
-import {SCR_USER_TYPES, ScrUser} from "./user.model";
-import {ScrUserJob} from "./job.model";
-import {ScrAddress} from "./address.model";
-import {ScrUserFieldOfInterest} from "./interest.model";
-
-const SCR_USER_MOCK: ScrUser = new ScrUser(
-  'abcdefg',
-  'John',
-  'Doe',
-  new ScrAddress(
-    'Sample Street 123',
-    '99999',
-    'New York',
-    'USA'
-  ),
-  'JDoe',
-  'john.doe@demo.com',
-  null,
-  SCR_USER_TYPES[0],
-  [
-    new ScrUserJob(
-      'NASA',
-      {
-        displayName: 'Lead Space Explorer'
-      },
-      {
-        displayName: 'Aerospace'
-      }
-    ),
-    new ScrUserJob(
-      'SpaceX',
-      {
-        displayName: 'Astronaut'
-      },
-      {
-        displayName: 'Aerospace'
-      }
-    ),
-    new ScrUserJob(
-      'Virgin Galactic',
-      {
-        displayName: 'Spacecraft Engineer'
-      },
-      {
-        displayName: 'Aerospace'
-      }
-    )
-  ],
-  [
-    new ScrUserFieldOfInterest('Mathematics'),
-    new ScrUserFieldOfInterest('Physics'),
-    new ScrUserFieldOfInterest('Computer Science'),
-    new ScrUserFieldOfInterest('Linear Algebra'),
-  ]
-);
+import {ScrUser} from "./user.model";
+import {HttpClient} from "@angular/common/http";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class ScrUserService {
 
-    constructor() {
+    constructor(private httpClient: HttpClient) {
+    }
+
+    public create(newUser: ScrUser): Promise<any> {
+      let url = 'https://api.scienceroots.com/users';
+
+      return this.httpClient.post(url, newUser)
+        .map(res => {
+          console.log(res);
+
+          return res;
+        })
+        .toPromise();
     }
 
     public byUserId(userId: string): Promise<ScrUser> {
-      return Promise.resolve(SCR_USER_MOCK);
+      return Promise.reject("Not implemented yet.");
     }
 }

@@ -8,16 +8,12 @@ import {ScrUserType} from "../../core/user.model";
       <div fxLayout="column">
         <div  fxFlex=""
               class="label--title">
-          <mat-icon>
-            {{ type.icon }}
-          </mat-icon>
           <span class="mat-title">
              {{ type.displayName }}
            </span>
         </div>
         <div fxFlex=""
              class="mat-body">
-          {{ type.description }}
         </div>
       </div>
     </div>
