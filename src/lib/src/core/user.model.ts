@@ -19,6 +19,21 @@ export const SCR_USER_TYPES: ScrUserType[] = [
 
 export class ScrUser {
 
+  public static fromObj(obj: any): ScrUser {
+    return new ScrUser(
+      obj.username,
+      obj.email,
+      obj.password,
+      obj.id,
+      obj.forename,
+      obj.lastname,
+      obj.address,
+      obj.type,
+      obj.jobs,
+      obj.interests
+    );
+  }
+
   constructor(
     public username?: string,
     public email?: string,
@@ -31,6 +46,10 @@ export class ScrUser {
     public jobs?: ScrUserJob[],
     public interests?: ScrUserFieldOfInterest[]
   ) {
+  }
+
+  public isValid(): boolean {
+    return !!this.forename && !!this.lastname && !!this.username && !!this.email;
   }
 }
 

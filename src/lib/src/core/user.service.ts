@@ -1,22 +1,31 @@
 import {Injectable} from "@angular/core";
 import {ScrUser} from "./user.model";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import "rxjs/add/operator/map";
+import {ScrActiveUserService} from "./active-user.service";
+
+const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
+const SCR_USER_RESGISTER_PATH: string = SCR_USER_BASE_PATH + '/register';
 
 @Injectable()
 export class ScrUserService {
 
-    constructor(private httpClient: HttpClient) {
+    constructor(
+      private httpClient: HttpClient,
+      private activeUserService: ScrActiveUserService
+    ) {
     }
 
-    public create(newUser: ScrUser): Promise<any> {
-      let url = 'https://api.scienceroots.com/users';
+    public create(newUser: ScrUser): Promise<ScrUser> {
+      return this.httpClient
+        .post(SCR_USER_RESGISTER_PATH, newUser, { observe: 'response' })
+        .map((res: HttpResponse<any>) => {
+          let token = res.headers.get('Authorization');
+          let user: ScrUser = ScrUser.fromObj(res.body);
 
-      return this.httpClient.post(url, newUser)
-        .map(res => {
-          console.log(res);
+          this.activeUserService.set(user);
 
-          return res;
+          return user;
         })
         .toPromise();
     }

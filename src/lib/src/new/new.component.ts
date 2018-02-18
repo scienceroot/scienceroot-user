@@ -138,7 +138,7 @@ import {FormControl, Validators} from "@angular/forms";
 })
 export class ScrUserNewComponent {
 
-  public user: ScrUser = new ScrUser();
+  public user: ScrUser = new ScrUser('seemann6', 'sven.seemann@scienceroots.com', 'secret', null, 'Sven', 'Seemann');
 
   public acceptedTerms: boolean = false;
   public acceptedTermsError: boolean = false;
@@ -160,10 +160,13 @@ export class ScrUserNewComponent {
 
   public save() {
     if(!!this.acceptedTerms) {
-      console.log(this.user)
-      //this.userService.create(this.user).then(res => console.log(res));
+      this.userService.create(this.user).then(res => console.log(res));
     } else {
       this.acceptedTermsError = true;
     }
+  }
+
+  private isValid(): boolean {
+    return this.user.isValid() && !!this.user.password;
   }
 }
