@@ -88,8 +88,8 @@
   resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.0-beta.3.tgz#fd2dde34f3f13b114e0f66c4cb58a4fc48fb8bf5"
 
 "@scienceroot/security@1.x.x":
-  version "1.0.1"
-  resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.1.tgz#a169d3cb2a9b22dfb973343ade1024d8b361f6f8"
+  version "1.0.3"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.3.tgz#6b80b24e8cb36c956e143314b0b864a134e7145f"
 
 abbrev@1:
   version "1.1.1"

@@ -5,13 +5,11 @@ import {ScrUser} from "../../../core/user.model";
   selector: 'scr-user-details-info-jobs',
   template: `
     <div class="jobs">
-      <div class="mat-headline jobs--headline">
+      <div class="jobs--headline">
         <mat-icon>
           work
         </mat-icon>
-        <span>
-            Jobs
-          </span>
+        <span class="mat-headline">Jobs</span>
       </div>
       <ng-container *ngFor="let job of user.jobs">
         <div class="job">

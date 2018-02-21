@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {ScrUser} from "../../../core/user.model";
 
 @Component({
@@ -26,7 +26,7 @@ import {ScrUser} from "../../../core/user.model";
         </div>
         <div>
           <span class="mat-headline">
-            {{ user.address.toString() }}
+            {{ user.address?.toString() }}
           </span>
         </div>
       </div>
@@ -40,8 +40,11 @@ import {ScrUser} from "../../../core/user.model";
     }
   `]
 })
-export class ScrUserProfileHeaderComponent {
+export class ScrUserProfileHeaderComponent implements OnInit {
 
   @Input() user: ScrUser;
 
+  ngOnInit(): void {
+    console.log(this.user)
+  }
 }

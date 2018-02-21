@@ -29,13 +29,13 @@ export class ScrUserProfileMenuComponent implements OnInit {
     this.links = [
       {
         displayName: 'Information',
-        path: ['/user', this.user.id, 'info']
+        path: ['/user', this.user.uid, 'info']
       }, {
         displayName: 'Activities',
-        path: ['/user', this.user.id, 'activities']
+        path: ['/user', this.user.uid, 'activities']
       }, {
         displayName: 'Documents',
-        path: ['/user', this.user.id, 'documents']
+        path: ['/user', this.user.uid, 'documents']
       }
     ]
   }

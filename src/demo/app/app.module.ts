@@ -7,7 +7,10 @@ import { AppComponent }  from './app.component';
 import {ScrUserDetailsLinkModule, ScrUserRoutesModule} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {ScrAuthenticationLoginComponent, ScrAuthenticationTokenStoreConfig} from "@scienceroot/security";
+import {
+  ScrAuthenticationLoginComponent, ScrAuthenticationModule,
+  ScrAuthenticationTokenStoreConfig, ScrSecureHttpClientModule
+} from "@scienceroot/security";
 
 @NgModule({
   imports:      [
@@ -16,9 +19,11 @@ import {ScrAuthenticationLoginComponent, ScrAuthenticationTokenStoreConfig} from
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'user/new' },
+      //{ path: '', pathMatch: 'full', redirectTo: '' },
       { path: 'login', component: ScrAuthenticationLoginComponent }
     ]),
+    ScrAuthenticationModule,
+    ScrSecureHttpClientModule,
     ScrUserRoutesModule,
     ScrUserDetailsLinkModule
   ],

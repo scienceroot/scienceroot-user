@@ -27,10 +27,10 @@ const USER_ROUTES: Route[] = [
       },
       {
         path: ':userId',
-        canActivate: [ScrAuthenticationGuard],
         children: [
           {
             path: 'info',
+            canActivate: [ScrAuthenticationGuard],
             resolve: {
               user: ScrUserResolver
             },
