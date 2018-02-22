@@ -163,7 +163,7 @@ export class ScrUserNewComponent {
       this.userService.create(this.user)
         .then((user: ScrUser) => {
           console.log(user);
-          this.router.navigate(['/user', user.uid])
+          this.router.navigate(['/user', user.uid, 'info'])
         });
     } else {
       this.acceptedTermsError = true;
