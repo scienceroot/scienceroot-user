@@ -109,7 +109,7 @@ import {FormControl, Validators} from "@angular/forms";
           <button mat-raised-button=""
                   color="accent"
                   (click)="save()">
-            Next
+            Register
           </button>
         </div>
       </div>
