@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {ScrActiveUserService} from "../../../active/active-user.service";
+import {ScrUser} from "../../../core/user.model";
 
 @Component({
   selector: 'scr-user-details-link-menu',
@@ -18,12 +20,14 @@ import {Component} from "@angular/core";
     </div>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <a  mat-menu-item
+          *ngIf="!!activeUser"
+          [routerLink]="['/user', activeUser.id, 'info']">
         <mat-icon>
           home
         </mat-icon>
         <span>Your profile</span>
-      </button>
+      </a>
       <button mat-menu-item>
         <mat-icon>
           message
@@ -66,4 +70,8 @@ import {Component} from "@angular/core";
 })
 export class ScrUserDetailsLinkMenuComponent {
 
+  @Input() activeUser: ScrUser;
+
+  constructor() {
+  }
 }

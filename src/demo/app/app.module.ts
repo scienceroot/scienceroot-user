@@ -4,12 +4,12 @@ import { RouterModule }      from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import {ScrUserDetailsLinkModule, ScrUserRoutesModule} from "user";
+import {ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {
   ScrAuthenticationLoginComponent, ScrAuthenticationModule,
-  ScrAuthenticationTokenStoreConfig, ScrSecureHttpClientModule
+  ScrAuthenticationStoreConfig, ScrSecureHttpClientModule
 } from "@scienceroot/security";
 
 @NgModule({
@@ -36,7 +36,17 @@ export class AppModule {
 
 
   constructor() {
-    new ScrAuthenticationTokenStoreConfig('scrAuthToken').save();
+    new ScrAuthenticationStoreConfig(
+      'scrAuthToken',
+      'https://api.scienceroots.com/register',
+      'https://api.scienceroots.com/login',
+      'https://api.scienceroots.com/token',
+    ).save();
+
+    new ScrUserStoreConfigModel(
+      'http://localhost:8080/users',
+      'http://localhost:8080/register'
+    ).save();
   }
 
 

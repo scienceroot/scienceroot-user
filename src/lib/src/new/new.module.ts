@@ -4,7 +4,6 @@ import {MatButtonModule, MatInputModule} from "@angular/material";
 import {ScrUserNewTypeModule} from "./type/type.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
-import {ScrUserNewInfoModule} from "./info/info.module";
 import {ScrUserNewPasswordModule} from "./password/password.module";
 import {ScrUserNewTermsModule} from "./terms/terms.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -21,8 +20,7 @@ export * from './new.component';
     MatButtonModule,
     ScrUserNewTypeModule,
     ScrUserNewPasswordModule,
-    ScrUserNewTermsModule,
-    ScrUserNewInfoModule
+    ScrUserNewTermsModule
   ],
   declarations: [
     ScrUserNewComponent

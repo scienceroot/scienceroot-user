@@ -8,6 +8,8 @@ import {ScrUserResolver} from "./user.resolver";
 import {ScrUserDetailsInfoComponent} from "../details/info/info.component";
 import {ScrUserDetailsModule} from "../details/details.module";
 import {ScrAuthenticationGuard, ScrAuthenticationModule} from "@scienceroot/security";
+import {ScrUserEditComponent} from "../edit/edit.component";
+import {ScrUserEditModule} from "../edit/edit.module";
 
 const USER_ROUTES: Route[] = [
   {
@@ -35,6 +37,14 @@ const USER_ROUTES: Route[] = [
               user: ScrUserResolver
             },
             component: ScrUserDetailsInfoComponent
+          },
+          {
+            path: 'edit',
+            canActivate: [ScrAuthenticationGuard],
+            resolve: {
+              user: ScrUserResolver
+            },
+            component: ScrUserEditComponent
           }
         ]
       }
@@ -47,6 +57,7 @@ const USER_ROUTES: Route[] = [
     ScrAuthenticationModule,
     ScrUserCoreModule,
     ScrUserDetailsModule,
+    ScrUserEditModule,
     ScrTermsAndConditionsModule,
     RouterModule.forChild(USER_ROUTES)
   ],

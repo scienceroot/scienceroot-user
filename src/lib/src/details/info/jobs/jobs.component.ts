@@ -11,6 +11,18 @@ import {ScrUser} from "../../../core/user.model";
         </mat-icon>
         <span class="mat-headline">Jobs</span>
       </div>
+      <ng-container *ngIf="jobs && jobs.length > 0; then jobsList else noJobs;">
+      </ng-container>
+        
+    </div>
+    
+    <ng-template #noJobs>
+      <span class="mat-body-1">
+        No jobs added yet.
+      </span>
+    </ng-template>
+    
+    <ng-template #jobsList>
       <ng-container *ngFor="let job of user.jobs">
         <div class="job">
             <span class="mat-subheading-2 scr-primary-text">
@@ -27,7 +39,7 @@ import {ScrUser} from "../../../core/user.model";
             </span>
         </div>
       </ng-container>
-    </div>
+    </ng-template>
   `,
   styles: [`
     .jobs .jobs--headline mat-icon {

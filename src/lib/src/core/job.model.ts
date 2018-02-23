@@ -1,5 +1,5 @@
 import {ScrUserJobTitle} from "./job-title.model";
-import {ScrUserIndustry} from "./industry.model";
+import {ScrUserIndustry} from "./industry/industry.model";
 
 export class ScrUserJob {
 
