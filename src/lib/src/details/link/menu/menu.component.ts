@@ -21,8 +21,7 @@ import {ScrUser} from "../../../core/user.model";
 
     <mat-menu #menu="matMenu">
       <a  mat-menu-item
-          *ngIf="!!activeUser"
-          [routerLink]="['/user', activeUser.id, 'info']">
+          [routerLink]="['/user', activeUser.uid, 'info']">
         <mat-icon>
           home
         </mat-icon>

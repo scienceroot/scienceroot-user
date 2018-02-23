@@ -13,7 +13,7 @@ import {ScrUser} from "../../core/user.model";
     </div>
     
     <ng-template #profileLink>
-      <scr-user-details-link-menu>
+      <scr-user-details-link-menu [activeUser]="activeUser">
       </scr-user-details-link-menu>
     </ng-template>
 
@@ -32,7 +32,10 @@ export class ScrUserDetailsLinkContainerComponent {
 
   constructor(private activeUserService: ScrActiveUserService) {
     this.activeUserService.activeUserChanged
-      .subscribe(user => this.activeUser = user);
+      .subscribe(user => {
+        this.activeUser = user;
+        console.log(user)
+      });
   }
 
 }
