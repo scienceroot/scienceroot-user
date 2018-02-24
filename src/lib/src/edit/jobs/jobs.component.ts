@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {ScrUserJob} from "../../core/job.model";
+import {ScrUserJob} from "../../core/job/job.model";
 import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
 import {ScrUserEditJobsAddComponent} from "./add/add.component";
+import {ScrUserService} from "../../core/user.service";
 
 @Component({
   selector: 'scr-user-edit-jobs',
@@ -45,7 +46,10 @@ export class ScrUserEditJobsComponent {
 
   private dialogRef: MatDialogRef<ScrUserEditJobsAddComponent>;
 
-  constructor(private dialog: MatDialog) {
+  constructor(
+    private dialog: MatDialog,
+    private userService: ScrUserService
+  ) {
 
   }
 
@@ -56,7 +60,7 @@ export class ScrUserEditJobsComponent {
 
     this.dialogRef.afterClosed().subscribe((job: ScrUserJob) => {
       if(!!job) {
-
+        this.userService.addJob(job).then(user => this.jobs = user.jobs);
       }
     })
   }

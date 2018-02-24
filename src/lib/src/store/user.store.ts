@@ -14,9 +14,21 @@ export class ScrUserStore {
     return `${config.base}/${userId}`;
   }
 
+  public static jobsById(userId: string): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return `${config.base}/${userId}/jobs`;
+  }
+
   public static getMe(): string {
     let config = ScrUserStoreConfigModel.fetch();
 
     return `${config.base}/me`;
+  }
+
+  public static industry(): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return config.industry;
   }
 }

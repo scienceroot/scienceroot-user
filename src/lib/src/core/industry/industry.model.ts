@@ -1,7 +1,9 @@
 export class ScrUserIndustry {
 
-  public static fromObjectArray(objArr: any[]) {
-    return objArr.map(obj => ScrUserIndustry.fromObject(obj));
+  public static fromObjectArray(objArr: any[] = []) {
+    let mapFnc = (obj: any) => ScrUserIndustry.fromObject(obj);
+
+    return objArr.map(mapFnc);
   }
 
   public static fromObject(obj: any) {
@@ -20,3 +22,5 @@ export class ScrUserIndustry {
 
   }
 }
+
+

@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {ScrUserEditJobsAddComponent} from "./add.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatAutocompleteModule, MatButtonModule, MatDialogModule, MatInputModule} from "@angular/material";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {ScrIndustryModule} from "../../../core/industry/industry.module";
 
@@ -10,6 +10,7 @@ import {ScrIndustryModule} from "../../../core/industry/industry.module";
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     MatInputModule,
     MatButtonModule,

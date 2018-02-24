@@ -1,5 +1,4 @@
 import {Component, Input} from "@angular/core";
-import {ScrActiveUserService} from "../../../active/active-user.service";
 import {ScrUser} from "../../../core/user.model";
 
 @Component({

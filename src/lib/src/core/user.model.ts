@@ -1,4 +1,4 @@
-import {ScrUserJob} from "./job.model";
+import {ScrUserJob} from "./job/job.model";
 import {ScrAddress} from "./address.model";
 import {ScrUserFieldOfInterest} from "./interest.model";
 

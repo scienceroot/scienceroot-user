@@ -5,12 +5,14 @@ import "rxjs/add/operator/map";
 import {ScrActiveUserService} from "../active/active-user.service";
 import {ScrAuthenticationStore} from "@scienceroot/security";
 import {ScrUserStore} from "../store/user.store";
+import {ScrUserJob} from "./job/job.model";
 
 @Injectable()
 export class ScrUserService {
 
     constructor(
-      private httpClient: HttpClient
+      private httpClient: HttpClient,
+      private activeUserService: ScrActiveUserService
     ) {
 
     }
@@ -25,7 +27,6 @@ export class ScrUserService {
           let user: ScrUser = ScrUser.fromObj(res.body);
 
           ScrAuthenticationStore.setToken(token);
-          this.activeUserService.set(user);
 
           return user;
         })
@@ -36,6 +37,15 @@ export class ScrUserService {
       let url = ScrUserStore.byId(userId);
 
       return this.httpClient.get(url)
+        .map(res => ScrUser.fromObj(res))
+        .toPromise();
+    }
+
+    public addJob(newJob: ScrUserJob): Promise<ScrUser> {
+      let activeUser = this.activeUserService.get();
+      let url: string = ScrUserStore.jobsById(activeUser.uid);
+
+      return this.httpClient.post(url, newJob)
         .map(res => ScrUser.fromObj(res))
         .toPromise();
     }

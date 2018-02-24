@@ -1,10 +1,11 @@
 import {Component} from "@angular/core";
-import {ScrUserJob} from "../../../core/job.model";
+import {ScrUserJob} from "../../../core/job/job.model";
 import {ScrUserIndustry} from "../../../core/industry/industry.model";
 import {Subject} from "rxjs/Subject";
 import "rxjs/add/operator/debounceTime";
 import {ScrIndustryService} from "../../../core/industry/industry.service";
 import {MatAutocompleteSelectedEvent, MatDialogRef} from "@angular/material";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: '',
@@ -18,12 +19,14 @@ import {MatAutocompleteSelectedEvent, MatDialogRef} from "@angular/material";
         <div fxFlex="">
           <mat-form-field>
             <input  matInput=""
+                    [(ngModel)]="newJob.title"
                     placeholder="Job Title"/>
           </mat-form-field>
         </div>
         <div fxFlex="">
           <mat-form-field>
             <input  matInput=""
+                    [(ngModel)]="newJob.employer"
                     placeholder="Employer"/>
           </mat-form-field>
         </div>
@@ -33,8 +36,7 @@ import {MatAutocompleteSelectedEvent, MatDialogRef} from "@angular/material";
           <input type="text" placeholder="Industry" 
                  aria-label="Industry" 
                  matInput
-                 [ngModel]="industryName"
-                 (ngModelChange)="onIndustryNameChange($event)"
+                 [formControl]="industryCtr"
                  [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete"
                             [displayWith]="displayIndustry"
@@ -77,36 +79,36 @@ export class ScrUserEditJobsAddComponent {
 
   public newJob: ScrUserJob = new ScrUserJob();
 
-  public industryNameChange: Subject<string> = new Subject();
-  public industryName: string;
-  public industry: ScrUserIndustry;
+  public industryCtr: FormControl = new FormControl();
+
+  public industry: ScrUserIndustry = new ScrUserIndustry();
   public industryOptions: Promise<ScrUserIndustry[]>;
 
   constructor(
     private industryService: ScrIndustryService,
     private dialogRef: MatDialogRef<ScrUserEditJobsAddComponent>
   ) {
-    this.industryNameChange.asObservable()
+    this.industryCtr.valueChanges.asObservable()
       .debounceTime(200)
       .subscribe(query => this.industryOptions = this.industryService.get(query));
   }
 
-  public displayIndustry(industry: ScrUserIndustry): string {
-    return industry.name;
+  public displayIndustry(industry: ScrUserIndustry = new ScrUserIndustry()): string {
+    if(!!industry) {
+      return industry.name;
+    } else {
+      return null;
+    }
   }
 
   public selectedIndustry(event: MatAutocompleteSelectedEvent) {
-    this.industry = ScrUserIndustry.fromObject(event.option);
-  }
-
-  public onIndustryNameChange(newIndustryName: string) {
-    this.industryName = newIndustryName;
-    this.industryNameChange.next(newIndustryName);
+    this.industry = event.option.value;
   }
 
   public submit() {
-    if(!this.industry && !!this.industryName) {
-
+    if(!!this.industry) {
+      this.newJob.industry = this.industry;
+      this.dialogRef.close(this.newJob);
     }
   }
 }

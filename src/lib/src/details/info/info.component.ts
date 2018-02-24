@@ -28,5 +28,6 @@ export class ScrUserDetailsInfoComponent {
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.user = this.activatedRoute.snapshot.data.user;
+    console.log(this.user)
   }
 }

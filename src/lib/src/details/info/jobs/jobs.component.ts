@@ -11,7 +11,7 @@ import {ScrUser} from "../../../core/user.model";
         </mat-icon>
         <span class="mat-headline">Jobs</span>
       </div>
-      <ng-container *ngIf="jobs && jobs.length > 0; then jobsList else noJobs;">
+      <ng-container *ngIf="user.jobs && user.jobs.length > 0; then jobsList else noJobs;">
       </ng-container>
         
     </div>
@@ -26,7 +26,7 @@ import {ScrUser} from "../../../core/user.model";
       <ng-container *ngFor="let job of user.jobs">
         <div class="job">
             <span class="mat-subheading-2 scr-primary-text">
-               {{ job.title?.displayName }}
+               {{ job.title }}
             </span>
           <span class="mat-body-1 job--spacer">
               at
@@ -35,7 +35,7 @@ import {ScrUser} from "../../../core/user.model";
               {{ job.employer }}
             </span>
           <span class="mat-body-2">
-              ({{ job.industry?.displayName }})
+              ({{ job.industry?.name }})
             </span>
         </div>
       </ng-container>

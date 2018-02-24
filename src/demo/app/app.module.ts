@@ -4,7 +4,7 @@ import { RouterModule }      from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import {ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
+import {ScrActiveUserModule, ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {
@@ -24,6 +24,7 @@ import {
     ]),
     ScrAuthenticationModule,
     ScrSecureHttpClientModule,
+    ScrActiveUserModule,
     ScrUserRoutesModule,
     ScrUserDetailsLinkModule
   ],
@@ -45,10 +46,9 @@ export class AppModule {
 
     new ScrUserStoreConfigModel(
       'http://localhost:8080/users',
-      'http://localhost:8080/register'
+      'http://localhost:8080/register',
+      'http://localhost:8080/industries/'
     ).save();
   }
-
-
 }
 
