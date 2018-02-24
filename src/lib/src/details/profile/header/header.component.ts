@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {ScrUser} from "../../../core/user.model";
+import {ScrActiveUserService} from "../../../active/active-user.service";
 
 @Component({
   selector: 'scr-user-profile-header',
@@ -30,6 +31,15 @@ import {ScrUser} from "../../../core/user.model";
           </span>
         </div>
       </div>
+      <div fxFlex="64px">
+        <ng-container *ngIf="user.uid === activeUser.uid">
+          <a  mat-icon-button=""
+              [routerLink]="['/user', user.uid, 'edit']"
+              color="accent">
+            <mat-icon>edit</mat-icon>
+          </a>
+        </ng-container>
+      </div>
     </div>
   `,
   styles: [`
@@ -40,11 +50,13 @@ import {ScrUser} from "../../../core/user.model";
     }
   `]
 })
-export class ScrUserProfileHeaderComponent implements OnInit {
+export class ScrUserProfileHeaderComponent {
 
   @Input() user: ScrUser;
 
-  ngOnInit(): void {
-    console.log(this.user)
+  public activeUser: ScrUser;
+
+  constructor(private activeUserService: ScrActiveUserService) {
+    this.activeUser = this.activeUserService.get();
   }
 }
