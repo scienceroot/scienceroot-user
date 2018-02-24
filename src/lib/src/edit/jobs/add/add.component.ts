@@ -86,7 +86,7 @@ export class ScrUserEditJobsAddComponent {
 
   constructor(
     private industryService: ScrIndustryService,
-    private dialogRef: MatDialogRef<ScrUserEditJobsAddComponent>
+    public dialogRef: MatDialogRef<ScrUserEditJobsAddComponent>
   ) {
     this.industryCtr.valueChanges
       .debounceTime(200)

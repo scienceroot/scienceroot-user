@@ -20,7 +20,7 @@ import {ScrUserService} from "../../core/user.service";
         <div fxLayout="row">
           <div fxFlex="64px">
             <button mat-icon-button=""
-                    (click)="showAdd($event)"
+                    (click)="showAdd()"
                     color="accent">
               <mat-icon>add</mat-icon>
             </button>
