@@ -138,7 +138,7 @@ import {FormControl, Validators} from "@angular/forms";
 })
 export class ScrUserNewComponent {
 
-  public user: ScrUser = new ScrUser('seemann6', 'sven.seemann@scienceroots.com', 'secret', null, 'Sven', 'Seemann');
+  public user: ScrUser = new ScrUser();
 
   public acceptedTerms: boolean = false;
   public acceptedTermsError: boolean = false;
