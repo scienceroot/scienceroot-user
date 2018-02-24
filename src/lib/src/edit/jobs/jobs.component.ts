@@ -14,13 +14,8 @@ import {ScrUserService} from "../../core/user.service";
         </mat-icon>
         <span class="mat-headline">Jobs</span>
       </div>
-      <div class="jobs--list">
-        <ng-container *ngFor="let job of jobs;">
-          <span>{{ job.title }}</span>
-          <span>{{ job.industry.name }}</span>
-          <span>{{ job.employer }}</span>
-        </ng-container>
-      </div>
+      <ng-container *ngIf="jobs && jobs.length > 0; then jobsList else noJobs;">
+      </ng-container>
       <div class="jobs--actions">
         <div fxLayout="row">
           <div fxFlex="64px">
@@ -33,6 +28,31 @@ import {ScrUserService} from "../../core/user.service";
         </div>
       </div>
     </div>
+
+    <ng-template #noJobs>
+      <span class="mat-body-1">
+        No jobs added yet.
+      </span>
+    </ng-template>
+
+    <ng-template #jobsList>
+      <ng-container *ngFor="let job of jobs">
+        <div class="job">
+            <span class="mat-subheading-2 scr-primary-text">
+               {{ job.title }}
+            </span>
+          <span class="mat-body-1 job--spacer">
+              at
+            </span>
+          <span class="mat-subheading-1">
+              {{ job.employer }}
+            </span>
+          <span class="mat-body-2">
+              ({{ job.industry?.name }})
+            </span>
+        </div>
+      </ng-container>
+    </ng-template>
   `,
   styles: [`
   
