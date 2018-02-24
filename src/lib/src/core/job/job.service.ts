@@ -11,8 +11,4 @@ export class ScrUserJobService {
   public get(userId: string): Promise<ScrUserJob[]> {
     return Promise.resolve([]);
   }
-
-  public save(job: ScrUserJob, userId: string): Promise<ScrUserJob> {
-
-  }
 }

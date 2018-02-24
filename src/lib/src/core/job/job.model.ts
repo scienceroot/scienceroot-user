@@ -2,13 +2,13 @@ import {ScrUserIndustry} from "../industry/industry.model";
 
 export class ScrUserJob {
 
-  public fromObjArr(objArr: any[] = []): ScrUserJob[] {
+  public static fromObjArr(objArr: any[] = []): ScrUserJob[] {
     let mapFnc = (obj: any) => ScrUserJob.fromObj(obj);
 
     return objArr.map(mapFnc);
   }
 
-  public fromObj(obj: any = {}): ScrUserJob {
+  public static fromObj(obj: any = {}): ScrUserJob {
     return new ScrUserJob(
       obj.employer,
       obj.title,

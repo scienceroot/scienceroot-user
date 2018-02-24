@@ -67,6 +67,8 @@ export class ScrActiveUserService {
       .catch((error: Error) => {
         localStorage.clear();
         this.router.navigate(['/login']);
+
+        return null;
       });
   }
 }

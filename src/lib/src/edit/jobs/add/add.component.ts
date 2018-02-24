@@ -88,7 +88,7 @@ export class ScrUserEditJobsAddComponent {
     private industryService: ScrIndustryService,
     private dialogRef: MatDialogRef<ScrUserEditJobsAddComponent>
   ) {
-    this.industryCtr.valueChanges.asObservable()
+    this.industryCtr.valueChanges
       .debounceTime(200)
       .subscribe(query => this.industryOptions = this.industryService.get(query));
   }
