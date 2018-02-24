@@ -1,4 +1,5 @@
 export * from './src/core/index';
+export * from './src/active/active.module';
 export * from './src/active/active-user.service';
 export * from './src/store/index';
 export * from './src/details/index';

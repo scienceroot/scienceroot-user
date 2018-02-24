@@ -5,6 +5,7 @@ import {ScrUserService} from "../core/user.service";
 import {ScrAuthenticationLoginService} from "@scienceroot/security";
 import {ScrUserStore} from "../store/user.store";
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ScrActiveUserService {
@@ -15,7 +16,8 @@ export class ScrActiveUserService {
 
   constructor(
     private httpClient: HttpClient,
-    private loginService: ScrAuthenticationLoginService
+    private loginService: ScrAuthenticationLoginService,
+    private router: Router
   ) {
     this.loginService.loginStateChanged
       .subscribe((state: boolean) => {
@@ -38,14 +40,16 @@ export class ScrActiveUserService {
     let user: ScrUser = null;
     let userStr: string = sessionStorage.getItem(this.storageKey);
 
+    console.log(userStr)
     if(!!userStr) {
       try {
-        let userObj: any = JSON.parse(this.storageKey);
+        let userObj: any = JSON.parse(userStr);
 
         user = ScrUser.fromObj(userObj);
       } catch(error) {
         // stored user is somehow corrupted
         sessionStorage.removeItem(this.storageKey);
+        console.error(error)
       } finally {
         return user;
       }
@@ -59,6 +63,10 @@ export class ScrActiveUserService {
 
     return this.httpClient.get(url)
       .map(res => ScrUser.fromObj(res))
-      .toPromise();
+      .toPromise()
+      .catch((error: Error) => {
+        localStorage.clear();
+        this.router.navigate(['/login']);
+      });
   }
 }
