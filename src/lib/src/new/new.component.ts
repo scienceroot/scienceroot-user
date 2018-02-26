@@ -15,7 +15,7 @@ import {FormControl, Validators} from "@angular/forms";
       </div>
       <div class="form">
         <div  class="step">
-          <scr-user-new-type (typeChange)="this.user.type = $event">
+          <scr-user-new-type (typeChange)="changeRole($event)">
           </scr-user-new-type>
         </div>
         <div class="step">
@@ -53,6 +53,9 @@ import {FormControl, Validators} from "@angular/forms";
                 </div>
               </div>
             </div>
+            <span class="mat-headline">
+              Credentials
+            </span>
             <div fxFlex="">
               <mat-form-field>
                 <input  matInput=""
@@ -65,20 +68,6 @@ import {FormControl, Validators} from "@angular/forms";
                 </mat-error>
                 <mat-error *ngIf="mailFormControl.hasError('email')">
                   E-Mail is <strong>invalid</strong>
-                </mat-error>
-              </mat-form-field>
-            </div>
-            <span class="mat-headline">
-              Credentials
-            </span>
-            <div fxFlex="">
-              <mat-form-field>
-                <input  matInput=""
-                        [(ngModel)]="user.username"
-                        [formControl]="usernameFormControl"
-                        placeholder="Username" />
-                <mat-error *ngIf="usernameFormControl.hasError('required')">
-                  Username is <strong>required</strong>
                 </mat-error>
               </mat-form-field>
             </div>
@@ -146,12 +135,12 @@ export class ScrUserNewComponent {
   public forenameFormControl = new FormControl('',[ Validators.required ]);
   public lastnameFormControl = new FormControl('',[ Validators.required ]);
   public mailFormControl = new FormControl('',[ Validators.required, Validators.email ]);
-  public usernameFormControl = new FormControl('',[ Validators.required ]);
 
   constructor(
     private router: Router,
     private userService: ScrUserService
   ) {
+    //this.user.roles.push(SCR_USER_TYPES[0].name)
   }
 
   public cancel() {
@@ -162,12 +151,16 @@ export class ScrUserNewComponent {
     if(!!this.acceptedTerms) {
       this.userService.create(this.user)
         .then((user: ScrUser) => {
-          console.log(user);
           this.router.navigate(['/user', user.uid, 'info'])
         });
     } else {
       this.acceptedTermsError = true;
     }
+  }
+
+  public changeRole(type: ScrUserType) {
+    this.user.roles = [];
+    this.user.roles.push(type.name);
   }
 
   private isValid(): boolean {

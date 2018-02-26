@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {ScrUser} from "../../../core/user.model";
 import {ScrActiveUserService} from "../../../active/active-user.service";
 
@@ -7,13 +7,6 @@ import {ScrActiveUserService} from "../../../active/active-user.service";
   template: `
     <div  fxLayout="row"
           fxLayoutGap="24px">
-      <div fxFlex="90px">
-        <div class="profile--avatar">
-          <mat-icon color="primary">
-            account_circle
-          </mat-icon>
-        </div>
-      </div>
       <div fxFlex="">
         <div class="scr-primary-text">
           <div>
@@ -21,7 +14,7 @@ import {ScrActiveUserService} from "../../../active/active-user.service";
               {{ user.forename }} {{ user.lastname }}
             </span>
             <span class="mat-display-1">
-              ({{ user.username }})
+              ({{ user.mail }})
             </span>
           </div>
         </div>

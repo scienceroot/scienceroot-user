@@ -4,13 +4,15 @@ import {ScrUserEditJobsModule} from "./jobs/jobs.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material";
 import {RouterModule} from "@angular/router";
+import {ScrUserEditInterestsModule} from "./interests/interests.module";
 
 @NgModule({
   imports: [
     RouterModule,
     FlexLayoutModule,
     MatButtonModule,
-    ScrUserEditJobsModule
+    ScrUserEditJobsModule,
+    ScrUserEditInterestsModule
   ],
   declarations: [
     ScrUserEditComponent

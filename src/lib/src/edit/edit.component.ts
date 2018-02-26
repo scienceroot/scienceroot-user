@@ -5,8 +5,17 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: '',
   template: `
+
+    <div class="mat-display-3">
+      <span>{{user.lastname}} {{user.forename}} | Edit</span>
+    </div>
+    
+    <scr-user-edit-interests [interests]="user.interests">
+    </scr-user-edit-interests>
+    
     <scr-user-edit-jobs [jobs]="user.jobs">
     </scr-user-edit-jobs>
+    
     <div class="actions">
       <div  fxLayout="row"
             fxLayoutAlign="end">

@@ -6,6 +6,7 @@ import {ScrActiveUserService} from "../active/active-user.service";
 import {ScrAuthenticationStore} from "@scienceroot/security";
 import {ScrUserStore} from "../store/user.store";
 import {ScrUserJob} from "./job/job.model";
+import {ScrUserFieldOfInterest} from "./interest/interest.model";
 
 @Injectable()
 export class ScrUserService {
@@ -49,4 +50,13 @@ export class ScrUserService {
         .map(res => ScrUser.fromObj(res))
         .toPromise();
     }
+
+  public addInterest(newInterest: ScrUserFieldOfInterest): Promise<ScrUser> {
+    let activeUser = this.activeUserService.get();
+    let url: string = ScrUserStore.interestsById(activeUser.uid);
+
+    return this.httpClient.post(url, newInterest)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
 }

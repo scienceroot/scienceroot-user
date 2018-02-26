@@ -7,7 +7,7 @@ import {ScrTermsAndConditionsModule} from "../terms/terms.module";
 import {ScrUserResolver} from "./user.resolver";
 import {ScrUserDetailsInfoComponent} from "../details/info/info.component";
 import {ScrUserDetailsModule} from "../details/details.module";
-import {ScrAuthenticationGuard, ScrAuthenticationModule} from "@scienceroot/security";
+import {ScrAuthenticationGuard, ScrAuthenticationLoginComponent, ScrAuthenticationModule} from "@scienceroot/security";
 import {ScrUserEditComponent} from "../edit/edit.component";
 import {ScrUserEditModule} from "../edit/edit.module";
 
@@ -15,6 +15,9 @@ const USER_ROUTES: Route[] = [
   {
     path: 'register',
     redirectTo: 'user/new'
+  },
+  { path: 'login',
+    component: ScrAuthenticationLoginComponent
   },
   {
     path: 'user',

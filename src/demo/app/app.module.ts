@@ -1,53 +1,51 @@
-import { NgModule }      from '@angular/core';
-import { FormsModule }      from '@angular/forms';
-import { RouterModule }      from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent }  from './app.component';
+import {AppComponent} from './app.component';
 import {ScrActiveUserModule, ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {
-  ScrAuthenticationLoginComponent, ScrAuthenticationModule,
-  ScrAuthenticationStoreConfig, ScrSecureHttpClientModule
-} from "@scienceroot/security";
+import {ScrAuthenticationModule, ScrAuthenticationStoreConfig, ScrSecureHttpClientModule} from "@scienceroot/security";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
-  imports:      [
+  imports: [
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    RouterModule.forRoot([
-      //{ path: '', pathMatch: 'full', redirectTo: '' },
-      { path: 'login', component: ScrAuthenticationLoginComponent }
-    ]),
     ScrAuthenticationModule,
     ScrSecureHttpClientModule,
     ScrActiveUserModule,
     ScrUserRoutesModule,
-    ScrUserDetailsLinkModule
+    ScrUserDetailsLinkModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo: '/user/new', pathMatch: 'full'}
+    ])
   ],
   declarations: [
     AppComponent,
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
-
+  private host: string = 'https://api.scienceroots.com';
+  //private host: string = 'http://localhost:8080';
 
   constructor() {
     new ScrAuthenticationStoreConfig(
       'scrAuthToken',
-      'https://api.scienceroots.com/register',
-      'https://api.scienceroots.com/login',
-      'https://api.scienceroots.com/token',
+      `${this.host}/register`,
+      `${this.host}/login`,
+      `${this.host}/token`,
     ).save();
 
     new ScrUserStoreConfigModel(
-      'http://localhost:8080/users',
-      'http://localhost:8080/register',
-      'http://localhost:8080/industries/'
+      `${this.host}/users`,
+      `${this.host}/register`,
+      `${this.host}/industries/`,
+      `${this.host}/interests/`
     ).save();
   }
 }

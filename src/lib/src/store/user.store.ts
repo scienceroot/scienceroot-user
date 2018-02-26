@@ -20,6 +20,12 @@ export class ScrUserStore {
     return `${config.base}/${userId}/jobs`;
   }
 
+  public static interestsById(userId: string): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return `${config.base}/${userId}/interests`;
+  }
+
   public static getMe(): string {
     let config = ScrUserStoreConfigModel.fetch();
 
@@ -30,5 +36,11 @@ export class ScrUserStore {
     let config = ScrUserStoreConfigModel.fetch();
 
     return config.industry;
+  }
+
+  public static interest(): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return config.interest;
   }
 }

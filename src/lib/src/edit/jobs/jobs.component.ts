@@ -9,9 +9,6 @@ import {ScrUserService} from "../../core/user.service";
   template: `
     <div>
       <div class="jobs--headline">
-        <mat-icon>
-          work
-        </mat-icon>
         <span class="mat-headline">Jobs</span>
       </div>
       <ng-container *ngIf="jobs && jobs.length > 0; then jobsList else noJobs;">
@@ -55,7 +52,7 @@ import {ScrUserService} from "../../core/user.service";
     </ng-template>
   `,
   styles: [`
-  
+
   `]
 })
 export class ScrUserEditJobsComponent {
@@ -79,8 +76,10 @@ export class ScrUserEditJobsComponent {
     this.dialogRef = this.dialog.open(ScrUserEditJobsAddComponent, config);
 
     this.dialogRef.afterClosed().subscribe((job: ScrUserJob) => {
-      if(!!job) {
-        this.userService.addJob(job).then(user => this.jobs = user.jobs);
+      if (!!job) {
+        this.userService
+          .addJob(job)
+          .then(user => this.jobs = user.jobs);
       }
     })
   }

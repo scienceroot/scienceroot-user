@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {ScrUserJob} from "../../../core/job/job.model";
 import {ScrUserIndustry} from "../../../core/industry/industry.model";
-import {Subject} from "rxjs/Subject";
 import "rxjs/add/operator/debounceTime";
 import {ScrIndustryService} from "../../../core/industry/industry.service";
 import {MatAutocompleteSelectedEvent, MatDialogRef} from "@angular/material";

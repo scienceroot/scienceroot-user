@@ -6,9 +6,6 @@ import {ScrUser} from "../../../core/user.model";
   template: `
     <div class="jobs">
       <div class="jobs--headline">
-        <mat-icon>
-          work
-        </mat-icon>
         <span class="mat-headline">Jobs</span>
       </div>
       <ng-container *ngIf="user.jobs && user.jobs.length > 0; then jobsList else noJobs;">

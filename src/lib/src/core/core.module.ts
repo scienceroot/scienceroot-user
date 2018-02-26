@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {ScrUserNewModule} from "../new/new.module";
 import {ScrUserService} from "./user.service";
-import {ScrAuthenticationModule} from "@scienceroot/security";
 
 export * from './user.model';
 export * from './user.resolver';

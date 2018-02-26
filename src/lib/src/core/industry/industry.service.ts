@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {ScrUser} from "../user.model";
 import {ScrUserIndustry} from "./industry.model";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {ScrUserStore} from "../../store/user.store";

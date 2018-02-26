@@ -1,6 +1,6 @@
 import {ScrUserJob} from "./job/job.model";
 import {ScrAddress} from "./address.model";
-import {ScrUserFieldOfInterest} from "./interest.model";
+import {ScrUserFieldOfInterest} from "./interest/interest.model";
 
 export const SCR_USER_TYPES: ScrUserType[] = [
   {
@@ -21,35 +21,33 @@ export class ScrUser {
 
   public static fromObj(obj: any): ScrUser {
     return new ScrUser(
-      obj.username,
       obj.mail,
       obj.password,
       obj.uid,
       obj.forename,
       obj.lastname,
       obj.address,
-      obj.type,
+      obj.roles,
       obj.jobs,
       obj.interests
     );
   }
 
   constructor(
-    public username?: string,
     public mail?: string,
     public password?: string,
     public uid?: string,
     public forename?: string,
     public lastname?: string,
     public address?: ScrAddress,
-    public type?: ScrUserType,
+    public roles?: string[],
     public jobs?: ScrUserJob[],
     public interests?: ScrUserFieldOfInterest[]
   ) {
   }
 
   public isValid(): boolean {
-    return !!this.forename && !!this.lastname && !!this.username && !!this.mail;
+    return !!this.forename && !!this.lastname && !!this.mail;
   }
 }
 
