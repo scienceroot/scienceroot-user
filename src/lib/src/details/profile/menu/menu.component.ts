@@ -30,12 +30,6 @@ export class ScrUserProfileMenuComponent implements OnInit {
       {
         displayName: 'Information',
         path: ['/user', this.user.uid, 'info']
-      }, {
-        displayName: 'Activities',
-        path: ['/user', this.user.uid, 'activities']
-      }, {
-        displayName: 'Documents',
-        path: ['/user', this.user.uid, 'documents']
       }
     ]
   }
