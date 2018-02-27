@@ -10,6 +10,7 @@ import {ScrUserDetailsModule} from "../details/details.module";
 import {ScrAuthenticationGuard, ScrAuthenticationLoginComponent, ScrAuthenticationModule} from "@scienceroot/security";
 import {ScrUserEditComponent} from "../edit/edit.component";
 import {ScrUserEditModule} from "../edit/edit.module";
+import {ScrUserWalletComponent} from "../details/wallet/wallet.component";
 
 const USER_ROUTES: Route[] = [
   {
@@ -40,6 +41,14 @@ const USER_ROUTES: Route[] = [
               user: ScrUserResolver
             },
             component: ScrUserDetailsInfoComponent
+          },
+          {
+            path: 'wallet',
+            canActivate: [ScrAuthenticationGuard],
+            resolve: {
+              user: ScrUserResolver
+            },
+            component: ScrUserWalletComponent
           },
           {
             path: 'edit',

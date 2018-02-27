@@ -48,7 +48,8 @@
       'rxjs': 'npm:rxjs',
       'tslib': 'npm:tslib/tslib.js',
 
-      '@scienceroot/security': 'npm:@scienceroot/security/bundles/security.umd.js'
+      '@scienceroot/security': 'npm:@scienceroot/security/bundles/security.umd.js',
+      '@scienceroot/wallet': 'npm:@scienceroot/wallet/bundles/wallet.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
