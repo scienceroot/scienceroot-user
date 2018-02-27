@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {ScrUser, ScrUserType} from "../core/user.model";
+import {Component, OnInit} from "@angular/core";
+import {SCR_USER_TYPES, ScrUser, ScrUserType} from "../core/user.model";
 import {Router} from "@angular/router";
 import {ScrUserService} from "../core/user.service";
 import {FormControl, Validators} from "@angular/forms";
@@ -13,6 +13,9 @@ import {FormControl, Validators} from "@angular/forms";
         Create a new account
       </span>
       </div>
+      
+      <span class="error">{{errorMessage}}</span>
+      
       <div class="form">
         <div  class="step">
           <scr-user-new-type (typeChange)="changeRole($event)">
@@ -97,6 +100,7 @@ import {FormControl, Validators} from "@angular/forms";
         <div fxFlex="100px">
           <button mat-raised-button=""
                   color="accent"
+                  [disabled]="!acceptedTerms"
                   (click)="save()">
             Register
           </button>
@@ -110,60 +114,93 @@ import {FormControl, Validators} from "@angular/forms";
       margin: auto;
     }
 
-    .new .header {
-      margin-bottom: 24px;
-    }
-    
-    .new .form {
-      margin: 24px 0;
-    }
-    
-    .step {
-      margin: 32px 0;
-    }
+        .new .header {
+            margin-bottom: 24px;
+        }
 
-    mat-form-field, input { width: 100%; }
-  `]
+        .new .form {
+            margin: 24px 0;
+        }
+
+        .step {
+            margin: 32px 0;
+        }
+
+        mat-form-field, input {
+            width: 100%;
+        }
+    
+    .error {
+      color: #F44336;
+    }
+    `]
 })
-export class ScrUserNewComponent {
+export class ScrUserNewComponent implements OnInit {
 
-  public user: ScrUser = new ScrUser();
+    public user: ScrUser = new ScrUser();
 
-  public acceptedTerms: boolean = false;
-  public acceptedTermsError: boolean = false;
+    public errorMessage: string;
 
-  public forenameFormControl = new FormControl('',[ Validators.required ]);
-  public lastnameFormControl = new FormControl('',[ Validators.required ]);
-  public mailFormControl = new FormControl('',[ Validators.required, Validators.email ]);
+    public acceptedTerms: boolean = false;
+    public acceptedTermsError: boolean = false;
 
-  constructor(
-    private router: Router,
-    private userService: ScrUserService
-  ) {
-    //this.user.roles.push(SCR_USER_TYPES[0].name)
-  }
+    public forenameFormControl = new FormControl('', [Validators.required]);
+    public lastnameFormControl = new FormControl('', [Validators.required]);
+    public mailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+    constructor(
+        private router: Router,
+        private userService: ScrUserService
+    ) {
+    }
+
+    ngOnInit(): void {
+        this.changeRole(SCR_USER_TYPES[0])
+    }
 
   public cancel() {
     this.router.navigate(['/login']);
   }
 
-  public save() {
-    if(!!this.acceptedTerms) {
-      this.userService.create(this.user)
-        .then((user: ScrUser) => {
-          this.router.navigate(['/user', user.uid, 'info'])
-        });
-    } else {
-      this.acceptedTermsError = true;
+    public save() {
+        this.userService
+            .create(this.user)
+            .then((user: ScrUser) => this.router.navigate(this.navigationBasedOnRole(user.uid, user.roles)))
+            .catch(error => this.handleError(error))
     }
-  }
 
-  public changeRole(type: ScrUserType) {
-    this.user.roles = [];
-    this.user.roles.push(type.name);
-  }
+    public changeRole(type: ScrUserType) {
+        this.user.roles = [];
+        this.user.roles.push(type.name);
+    }
 
-  private isValid(): boolean {
-    return this.user.isValid() && !!this.user.password;
-  }
+    private isValid(): boolean {
+        return this.user.isValid() && !!this.user.password;
+    }
+
+    private handleError(errorObj: any) {
+      if (errorObj && errorObj.error) {
+        this.errorMessage = errorObj.error.message;
+      }
+    }
+
+  /**
+   * Redirect to edit, if role 'journal'
+   *
+   * @param {string} id
+   * @param {string[]} roles
+   * @returns {string[]}
+   */
+    private navigationBasedOnRole(id: string, roles: string[]): string[] {
+
+      let path = ['/user', id, 'info'];
+
+      if (roles) {
+        if (roles.find(role => role === 'journal')) {
+          path = ['/user', id, 'edit'];
+        }
+      }
+
+      return path;
+    }
 }

@@ -33,7 +33,7 @@ import {ScrUser} from "../../../core/user.model";
         </mat-icon>
         <span>Wallet</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="logout()">
         <mat-icon>
           close
         </mat-icon>
@@ -72,5 +72,9 @@ export class ScrUserDetailsLinkMenuComponent {
   @Input() activeUser: ScrUser;
 
   constructor() {
+  }
+
+  public logout() {
+    localStorage.clear();
   }
 }

@@ -59,6 +59,7 @@
     "@angular/router": "5.x.x",
     "@scienceroot/design": "^1.0.0-beta.3",
     "@scienceroot/security": "1.x.x",
+    "@scienceroot/wallet": "^1.0.3",
     "camelcase": "4.1.x",
     "concurrently": "3.5.x",
     "core-js": "2.5.x",
