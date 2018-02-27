@@ -26,11 +26,12 @@ import {ScrUser} from "../../../core/user.model";
         </mat-icon>
         <span>Your profile</span>
       </a>
-      <button mat-menu-item>
+      <button mat-menu-item
+              [routerLink]="['/user', activeUser.uid, 'wallet']">
         <mat-icon>
-          message
+          account_balance_wallet
         </mat-icon>
-        <span>Messages</span>
+        <span>Wallet</span>
       </button>
       <button mat-menu-item>
         <mat-icon>

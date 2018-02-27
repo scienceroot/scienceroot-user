@@ -74,5 +74,7 @@
     "typescript": "2.6.x",
     "zone.js": "0.8.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@scienceroot/wallet": "^1.0.3"
+  }
 }

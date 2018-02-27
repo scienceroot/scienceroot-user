@@ -29,7 +29,8 @@ export class ScrUser {
       obj.address,
       obj.roles,
       obj.jobs,
-      obj.interests
+      obj.interests,
+      obj.publicKey
     );
   }
 
@@ -42,7 +43,8 @@ export class ScrUser {
     public address?: ScrAddress,
     public roles?: string[],
     public jobs?: ScrUserJob[],
-    public interests?: ScrUserFieldOfInterest[]
+    public interests?: ScrUserFieldOfInterest[],
+    public publicAddress?: string
   ) {
   }
 

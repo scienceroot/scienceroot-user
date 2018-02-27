@@ -30,8 +30,8 @@ import {RouterModule} from "@angular/router";
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  private host: string = 'https://api.scienceroots.com';
-  //private host: string = 'http://localhost:8080';
+  //private host: string = 'https://api.scienceroots.com';
+  private host: string = 'http://localhost:8080';
 
   constructor() {
     new ScrAuthenticationStoreConfig(
