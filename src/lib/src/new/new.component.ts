@@ -13,6 +13,9 @@ import {FormControl, Validators} from "@angular/forms";
         Create a new account
       </span>
       </div>
+      
+      <span class="error">{{errorMessage}}</span>
+      
       <div class="form">
         <div  class="step">
           <scr-user-new-type (typeChange)="changeRole($event)">
@@ -126,11 +129,17 @@ import {FormControl, Validators} from "@angular/forms";
         mat-form-field, input {
             width: 100%;
         }
+    
+    .error {
+      color: #F44336;
+    }
     `]
 })
 export class ScrUserNewComponent implements OnInit {
 
     public user: ScrUser = new ScrUser();
+
+    public errorMessage: string;
 
     public acceptedTerms: boolean = false;
     public acceptedTermsError: boolean = false;
@@ -156,10 +165,8 @@ export class ScrUserNewComponent implements OnInit {
     public save() {
         this.userService
             .create(this.user)
-            .then((user: ScrUser) => {
-                this.router.navigate(['/user', user.uid, 'info'])
-            })
-            .catch(error => console.error(error))
+            .then((user: ScrUser) => this.router.navigate(this.navigationBasedOnRole(user.uid, user.roles)))
+            .catch(error => this.handleError(error))
     }
 
     public changeRole(type: ScrUserType) {
@@ -169,5 +176,31 @@ export class ScrUserNewComponent implements OnInit {
 
     private isValid(): boolean {
         return this.user.isValid() && !!this.user.password;
+    }
+
+    private handleError(errorObj: any) {
+      if (errorObj && errorObj.error) {
+        this.errorMessage = errorObj.error.message;
+      }
+    }
+
+  /**
+   * Redirect to edit, if role 'journal'
+   *
+   * @param {string} id
+   * @param {string[]} roles
+   * @returns {string[]}
+   */
+    private navigationBasedOnRole(id: string, roles: string[]): string[] {
+
+      let path = ['/user', id, 'info'];
+
+      if (roles) {
+        if (roles.find(role => role === 'journal')) {
+          path = ['/user', id, 'edit'];
+        }
+      }
+
+      return path;
     }
 }
