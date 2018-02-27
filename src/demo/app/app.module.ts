@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ScrAuthenticationModule, ScrAuthenticationStoreConfig, ScrSecureHttpClientModule} from "@scienceroot/security";
 import {RouterModule} from "@angular/router";
+import {ScrWalletStoreConfig} from "@scienceroot/wallet";
 
 @NgModule({
   imports: [
@@ -46,6 +47,11 @@ export class AppModule {
       `${this.host}/register`,
       `${this.host}/industries/`,
       `${this.host}/interests/`
+    ).save();
+
+    new ScrWalletStoreConfig(
+      `${this.host}/users`,
+      'publickey'
     ).save();
   }
 }

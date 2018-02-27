@@ -144,7 +144,7 @@ export class ScrUserNewComponent {
   }
 
   public cancel() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   public save() {

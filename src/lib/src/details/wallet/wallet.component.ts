@@ -11,7 +11,7 @@ import {ScrUser} from "../../core/user.model";
     </div>
     
     <ng-template #newWallet>
-      <scr-wallet-new [userId]="this.user.id">
+      <scr-wallet-new [userId]="this.user.uid">
       </scr-wallet-new>
     </ng-template>
 
