@@ -199,6 +199,9 @@ export class ScrUserNewComponent implements OnInit {
         if (roles.find(role => role === 'journal')) {
           path = ['/user', id, 'edit'];
         }
+        if (roles.find(role => role === 'investor')) {
+          path = ['/user', id, 'wallet'];
+        }
       }
 
       return path;
