@@ -76,5 +76,6 @@ export class ScrUserDetailsLinkMenuComponent {
 
   public logout() {
     localStorage.clear();
+    location.reload();
   }
 }
