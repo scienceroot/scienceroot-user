@@ -16,10 +16,11 @@ import {ScrUserFieldOfInterest} from "../../core";
       <div class="interests--actions">
         <div fxLayout="row">
           <div fxFlex="64px">
-            <button mat-icon-button=""
+            <button mat-button=""
                     (click)="showAdd()"
                     color="accent">
               <mat-icon>add</mat-icon>
+              <span>Add Interest</span>
             </button>
           </div>
         </div>
@@ -41,7 +42,10 @@ import {ScrUserFieldOfInterest} from "../../core";
         </div>
       </ng-container>
     </ng-template>
-  `
+  `,
+  styles: [`
+    .interests--actions { padding: 12px 0; }
+  `]
 })
 export class ScrUserEditInterestsComponent {
 

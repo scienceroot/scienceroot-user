@@ -6,15 +6,23 @@ import {ActivatedRoute} from "@angular/router";
   selector: '',
   template: `
 
-    <div class="mat-display-3">
-      <span>{{user.lastname}} {{user.forename}} | Edit</span>
+    <div class="scr-primary-text">
+      <span class="mat-display-3">
+        Edit Profile
+      </span>
     </div>
-    
-    <scr-user-edit-interests [interests]="user.interests">
-    </scr-user-edit-interests>
-    
-    <scr-user-edit-jobs [jobs]="user.jobs">
-    </scr-user-edit-jobs>
+    <div class="section">
+      <scr-user-edit-wallet-info [user]="user">
+      </scr-user-edit-wallet-info>
+    </div>
+    <div class="section">
+      <scr-user-edit-interests [interests]="user.interests">
+      </scr-user-edit-interests>  
+    </div>
+    <div class="section">
+      <scr-user-edit-jobs [jobs]="user.jobs">
+      </scr-user-edit-jobs>
+    </div>
     
     <div class="actions">
       <div  fxLayout="row"
@@ -30,7 +38,7 @@ import {ActivatedRoute} from "@angular/router";
     </div>
   `,
   styles: [`
-  
+    .section { padding: 24px;}
   `]
 })
 export class ScrUserEditComponent {

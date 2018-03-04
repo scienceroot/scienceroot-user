@@ -16,10 +16,11 @@ import {ScrUserService} from "../../core/user.service";
       <div class="jobs--actions">
         <div fxLayout="row">
           <div fxFlex="64px">
-            <button mat-icon-button=""
+            <button mat-button=""
                     (click)="showAdd()"
                     color="accent">
               <mat-icon>add</mat-icon>
+              <span>Add Job</span>
             </button>
           </div>
         </div>
@@ -52,7 +53,7 @@ import {ScrUserService} from "../../core/user.service";
     </ng-template>
   `,
   styles: [`
-
+    .jobs--actions { padding: 12px 0; }
   `]
 })
 export class ScrUserEditJobsComponent {

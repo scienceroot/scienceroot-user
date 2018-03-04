@@ -5,12 +5,14 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {ScrUserEditInterestsModule} from "./interests/interests.module";
+import {ScrUserEditWalletInfoModule} from "./wallet-info/wallet-info.module";
 
 @NgModule({
   imports: [
     RouterModule,
     FlexLayoutModule,
     MatButtonModule,
+    ScrUserEditWalletInfoModule,
     ScrUserEditJobsModule,
     ScrUserEditInterestsModule
   ],
