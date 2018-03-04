@@ -8,7 +8,8 @@ import {Component} from "@angular/core";
           fxLayoutAlign="center center">
       <div  fxFlex="40px">
         <button mat-raised-button=""
-                color="accent">
+                color="accent"
+                [routerLink]="['/login']">
           Login
         </button>
       </div>
