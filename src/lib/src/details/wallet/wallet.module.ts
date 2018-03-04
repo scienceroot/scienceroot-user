@@ -3,6 +3,7 @@ import {ScrWalletCoreModule, ScrWalletNewModule, ScrWalletShowModule} from "@sci
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {ScrUserWalletComponent} from "./wallet.component";
+import {ScrUserProfileModule} from "../profile/profile.module";
 
 export * from './wallet.component';
 
@@ -12,7 +13,8 @@ export * from './wallet.component';
     RouterModule,
     ScrWalletCoreModule,
     ScrWalletShowModule,
-    ScrWalletNewModule
+    ScrWalletNewModule,
+    ScrUserProfileModule
   ],
   declarations: [
     ScrUserWalletComponent

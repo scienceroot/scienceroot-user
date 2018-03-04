@@ -6,19 +6,21 @@ import { Location } from '@angular/common';
 @Component({
   selector: '',
   template: `
-    <div>
-      <ng-container *ngIf="!!this.user.publicAddress; then existingWallet else newWallet;">
-      </ng-container>
-    </div>
+    <scr-user-profile [user]="user">
+      <div>
+        <ng-container *ngIf="!!user.publicAddress; then existingWallet else newWallet;">
+        </ng-container>
+      </div>
+    </scr-user-profile>
     
     <ng-template #newWallet>
-      <scr-wallet-new [userId]="this.user.uid"
+      <scr-wallet-new [userId]="user.uid"
                       (onWalletCreationFinished)="onWalletCreationFinished()">
       </scr-wallet-new>
     </ng-template>
 
     <ng-template #existingWallet>
-      <scr-wallet-show>
+      <scr-wallet-show [publicAddress]="user.publicAddress">
       </scr-wallet-show>
     </ng-template>
   `,

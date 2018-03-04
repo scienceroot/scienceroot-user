@@ -40,7 +40,6 @@ export class ScrActiveUserService {
     let user: ScrUser = null;
     let userStr: string = sessionStorage.getItem(this.storageKey);
 
-    console.log(userStr)
     if(!!userStr) {
       try {
         let userObj: any = JSON.parse(userStr);
