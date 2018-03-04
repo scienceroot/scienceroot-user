@@ -87,7 +87,7 @@
   version "1.0.2"
   resolved "https://npm.scienceroots.com/@bindoc%2floading/-/loading-1.0.2.tgz#65cacf8981f87ff5ded7d7a46b902c6c459dcd2b"
 
-"@scienceroot/design@^1.0.0-beta.3":
+"@scienceroot/design@1.x.x":
   version "1.0.3"
   resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.3.tgz#0a1674cb0165ab74551862c649a652fe3c7e3f42"
   dependencies:
@@ -97,7 +97,7 @@
   version "1.0.10"
   resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.10.tgz#6546d23acb359c9a29917673ee0725bdd883b290"
 
-"@scienceroot/wallet@^1.0.3":
+"@scienceroot/wallet@1.x.x":
   version "1.0.5"
   resolved "https://npm.scienceroots.com/@scienceroot%2fwallet/-/wallet-1.0.5.tgz#35e73cfb6c269b94fe15293ba1c026ceba18368f"
   dependencies:
