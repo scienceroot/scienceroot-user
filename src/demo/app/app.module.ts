@@ -9,6 +9,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ScrAuthenticationModule, ScrAuthenticationStoreConfig, ScrSecureHttpClientModule} from "@scienceroot/security";
 import {RouterModule} from "@angular/router";
 import {ScrWalletStoreConfig} from "@scienceroot/wallet";
+import {ScrUserLinkDemoModule} from "./link/link.module";
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {ScrWalletStoreConfig} from "@scienceroot/wallet";
     ScrUserDetailsLinkModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/user/new', pathMatch: 'full'}
-    ])
+    ]),
+    ScrUserLinkDemoModule
   ],
   declarations: [
     AppComponent,
