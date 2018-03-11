@@ -7,6 +7,7 @@ import {ScrAuthenticationStore} from "@scienceroot/security";
 import {ScrUserStore} from "../store/user.store";
 import {ScrUserJob} from "./job/job.model";
 import {ScrUserFieldOfInterest} from "./interest/interest.model";
+import {ScrUserLanguage} from "./language/language.model";
 
 @Injectable()
 export class ScrUserService {
@@ -42,7 +43,7 @@ export class ScrUserService {
       .toPromise();
   }
 
-  public addLanguage(newLanguage: ScrUserJob): Promise<ScrUser> {
+  public addLanguage(newLanguage: ScrUserLanguage): Promise<ScrUser> {
     let activeUser = this.activeUserService.get();
     let url: string = ScrUserStore.languagesById(activeUser.uid);
 

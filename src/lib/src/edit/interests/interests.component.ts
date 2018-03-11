@@ -3,6 +3,7 @@ import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
 import {ScrUserEditInterestsAddComponent} from "./add/add.component";
 import {ScrUserService} from "../../core/user.service";
 import {ScrUserFieldOfInterest} from "../../core";
+import {ScrUser} from "../../core/user.model";
 
 @Component({
   selector: 'scr-user-edit-interests',
@@ -69,7 +70,7 @@ export class ScrUserEditInterestsComponent {
       if (!!interest) {
         this.userService
           .addInterest(interest)
-          .then(user => this.interests = user.interests);
+          .then((user: ScrUser) => this.interests = user.interests);
       }
     })
   }

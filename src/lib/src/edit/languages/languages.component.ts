@@ -3,6 +3,7 @@ import {ScrUserLanguage} from "../../core/language/language.model";
 import {ScrUserEditLanguagesAddComponent} from "./add/add.component";
 import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
 import {ScrUserService} from "../../core/user.service";
+import {ScrUser} from "../../core/user.model";
 
 @Component({
   selector: 'scr-user-edit-languages',
@@ -69,7 +70,7 @@ export class ScrUserEditLanguagesComponent {
       if (!!language) {
         this.userService
           .addLanguage(language)
-          .then(user => this.languages = user.languages);
+          .then((user: ScrUser) => this.languages = user.languages);
       }
     })
   }

@@ -11,8 +11,8 @@ export class ScrUserLanguage {
   }
 
   constructor(
-    public id: string,
-    public name: string
+    public id?: string,
+    public name?: string
   ) {
   }
 }
