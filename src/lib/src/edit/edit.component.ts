@@ -20,6 +20,10 @@ import {ActivatedRoute} from "@angular/router";
       </scr-user-edit-interests>  
     </div>
     <div class="section">
+      <scr-user-edit-languages [languages]="user.languages">
+      </scr-user-edit-languages>
+    </div>
+    <div class="section">
       <scr-user-edit-jobs [jobs]="user.jobs">
       </scr-user-edit-jobs>
     </div>

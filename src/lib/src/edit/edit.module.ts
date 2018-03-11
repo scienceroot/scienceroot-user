@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {ScrUserEditInterestsModule} from "./interests/interests.module";
 import {ScrUserEditWalletInfoModule} from "./wallet-info/wallet-info.module";
+import {ScrUserEditLanguagesModule} from "./languages/languages.module";
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {ScrUserEditWalletInfoModule} from "./wallet-info/wallet-info.module";
     MatButtonModule,
     ScrUserEditWalletInfoModule,
     ScrUserEditJobsModule,
-    ScrUserEditInterestsModule
+    ScrUserEditInterestsModule,
+    ScrUserEditLanguagesModule
   ],
   declarations: [
     ScrUserEditComponent

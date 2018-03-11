@@ -11,45 +11,54 @@ import {ScrUserFieldOfInterest} from "./interest/interest.model";
 @Injectable()
 export class ScrUserService {
 
-    constructor(
-      private httpClient: HttpClient,
-      private activeUserService: ScrActiveUserService
-    ) {
+  constructor(
+    private httpClient: HttpClient,
+    private activeUserService: ScrActiveUserService
+  ) {
 
-    }
+  }
 
-    public create(newUser: ScrUser): Promise<ScrUser> {
-      let url: string = ScrUserStore.register();
+  public create(newUser: ScrUser): Promise<ScrUser> {
+    let url: string = ScrUserStore.register();
 
-      return this.httpClient
-        .post(url, newUser, { observe: 'response' })
-        .map((res: HttpResponse<any>) => {
-          let token = res.headers.get('Authorization');
-          let user: ScrUser = ScrUser.fromObj(res.body);
+    return this.httpClient
+      .post(url, newUser, {observe: 'response'})
+      .map((res: HttpResponse<any>) => {
+        let token = res.headers.get('Authorization');
+        let user: ScrUser = ScrUser.fromObj(res.body);
 
-          ScrAuthenticationStore.setToken(token);
+        ScrAuthenticationStore.setToken(token);
 
-          return user;
-        })
-        .toPromise();
-    }
+        return user;
+      })
+      .toPromise();
+  }
 
-    public byUserId(userId: string): Promise<ScrUser> {
-      let url = ScrUserStore.byId(userId);
+  public byUserId(userId: string): Promise<ScrUser> {
+    let url = ScrUserStore.byId(userId);
 
-      return this.httpClient.get(url)
-        .map(res => ScrUser.fromObj(res))
-        .toPromise();
-    }
+    return this.httpClient.get(url)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
 
-    public addJob(newJob: ScrUserJob): Promise<ScrUser> {
-      let activeUser = this.activeUserService.get();
-      let url: string = ScrUserStore.jobsById(activeUser.uid);
+  public addLanguage(newLanguage: ScrUserJob): Promise<ScrUser> {
+    let activeUser = this.activeUserService.get();
+    let url: string = ScrUserStore.languagesById(activeUser.uid);
 
-      return this.httpClient.post(url, newJob)
-        .map(res => ScrUser.fromObj(res))
-        .toPromise();
-    }
+    return this.httpClient.post(url, newLanguage)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
+
+  public addJob(newJob: ScrUserJob): Promise<ScrUser> {
+    let activeUser = this.activeUserService.get();
+    let url: string = ScrUserStore.jobsById(activeUser.uid);
+
+    return this.httpClient.post(url, newJob)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
 
   public addInterest(newInterest: ScrUserFieldOfInterest): Promise<ScrUser> {
     let activeUser = this.activeUserService.get();

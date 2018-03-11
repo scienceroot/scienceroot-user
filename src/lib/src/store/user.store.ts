@@ -26,6 +26,12 @@ export class ScrUserStore {
     return `${config.base}/${userId}/interests`;
   }
 
+  public static languagesById(userId: string): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return `${config.base}/${userId}/languages`;
+  }
+
   public static getMe(): string {
     let config = ScrUserStoreConfigModel.fetch();
 
@@ -42,5 +48,11 @@ export class ScrUserStore {
     let config = ScrUserStoreConfigModel.fetch();
 
     return config.interest;
+  }
+
+  public static language(): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return config.language;
   }
 }

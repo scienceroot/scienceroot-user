@@ -11,6 +11,10 @@ import {ActivatedRoute} from "@angular/router";
         </scr-user-details-info-interests>
       </div>
       <div class="info-section">
+        <scr-user-details-info-languages [user]="user">
+        </scr-user-details-info-languages>
+      </div>
+      <div class="info-section">
         <scr-user-details-info-jobs [user]="user">
         </scr-user-details-info-jobs>
       </div>

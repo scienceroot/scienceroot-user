@@ -5,6 +5,7 @@ import {ScrUserProfileModule} from "../profile/profile.module";
 import {ScrUserDetailsInfoJobsModule} from "./jobs/jobs.module";
 import {ScrUserDetailsInfoInterestsModule} from "./interests/interests.module";
 import {MatIconModule} from "@angular/material";
+import {ScrUserDetailsInfoLanguageModule} from "./languages/languages.module";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MatIconModule} from "@angular/material";
     MatIconModule,
     ScrUserProfileModule,
     ScrUserDetailsInfoJobsModule,
-    ScrUserDetailsInfoInterestsModule
+    ScrUserDetailsInfoInterestsModule,
+    ScrUserDetailsInfoLanguageModule
   ],
   declarations: [
     ScrUserDetailsInfoComponent

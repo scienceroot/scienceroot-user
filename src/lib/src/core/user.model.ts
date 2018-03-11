@@ -1,6 +1,7 @@
 import {ScrUserJob} from "./job/job.model";
 import {ScrAddress} from "./address.model";
 import {ScrUserFieldOfInterest} from "./interest/interest.model";
+import {ScrUserLanguage} from "./language/language.model";
 
 export const SCR_USER_TYPES: ScrUserType[] = [
   {
@@ -30,6 +31,7 @@ export class ScrUser {
       obj.roles,
       obj.jobs,
       obj.interests,
+      obj.languages,
       obj.publicKey
     );
   }
@@ -44,6 +46,7 @@ export class ScrUser {
     public roles?: string[],
     public jobs?: ScrUserJob[],
     public interests?: ScrUserFieldOfInterest[],
+    public languages?: ScrUserLanguage[],
     public publicAddress?: string
   ) {
   }

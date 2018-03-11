@@ -4,7 +4,8 @@ export class ScrUserStoreConfigModel {
     register: 'scr.user.register',
     base: 'scr.user.base',
     industry: 'scr.user.industry',
-    interest: 'scr.user.interest'
+    interest: 'scr.user.interest',
+    language: 'scr.user.language'
   };
 
   public static fetch(): ScrUserStoreConfigModel {
@@ -12,15 +13,17 @@ export class ScrUserStoreConfigModel {
     let register = sessionStorage.getItem(ScrUserStoreConfigModel.storageKeys.register) || '';
     let industry = sessionStorage.getItem(ScrUserStoreConfigModel.storageKeys.industry) || '';
     let interest = sessionStorage.getItem(ScrUserStoreConfigModel.storageKeys.interest) || '';
+    let language = sessionStorage.getItem(ScrUserStoreConfigModel.storageKeys.language) || '';
 
-    return new ScrUserStoreConfigModel(base, register, industry, interest);
+    return new ScrUserStoreConfigModel(base, register, industry, interest, language);
   }
 
   constructor(
     public base: string,
     public register: string,
     public industry: string,
-    public interest: string
+    public interest: string,
+    public language: string
   ) {
 
   }
