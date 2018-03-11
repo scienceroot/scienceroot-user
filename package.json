@@ -1,6 +1,6 @@
 {
   "name": "@scienceroot/user",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "",
   "main": "./user.umd.js",
   "module": "./user.es5.js",
@@ -76,6 +76,5 @@
     "typescript": "2.6.x",
     "zone.js": "0.8.x"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
