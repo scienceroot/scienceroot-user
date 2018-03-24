@@ -52,7 +52,7 @@ export class ScrUserService {
       .toPromise();
   }
 
-  public removeLanguage(languageToRemove: ScrUserJob): Promise<ScrUser> {
+  public removeLanguage(languageToRemove: ScrUserLanguage): Promise<ScrUser> {
     let activeUser = this.activeUserService.get();
     let url: string = ScrUserStore.languagesById(activeUser.uid) + '/' + languageToRemove.id;
 
