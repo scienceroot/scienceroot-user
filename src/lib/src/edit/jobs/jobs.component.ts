@@ -3,6 +3,7 @@ import {ScrUserJob} from "../../core/job/job.model";
 import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
 import {ScrUserEditJobsAddComponent} from "./add/add.component";
 import {ScrUserService} from "../../core/user.service";
+import {ScrUser} from "../../core/user.model";
 
 @Component({
   selector: 'scr-user-edit-jobs',
@@ -35,8 +36,19 @@ import {ScrUserService} from "../../core/user.service";
 
     <ng-template #jobsList>
       <ng-container *ngFor="let job of jobs">
-        <scr-user-job [job]="job">
-        </scr-user-job>
+        <div fxLayout="row">
+          <div fxFlex="">
+            <scr-user-job [job]="job">
+            </scr-user-job>
+          </div>
+          <div fxFlex="32px">
+            <button mat-icon-button=""
+                    color="accent"
+                    (click)="deleteJob(job)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
       </ng-container>
     </ng-template>
   `,
@@ -54,7 +66,7 @@ export class ScrUserEditJobsComponent {
 
   constructor(
     private dialog: MatDialog,
-    private userService: ScrUserService
+    private _userService: ScrUserService
   ) {
 
   }
@@ -66,10 +78,21 @@ export class ScrUserEditJobsComponent {
 
     this.dialogRef.afterClosed().subscribe((job: ScrUserJob) => {
       if (!!job) {
-        this.userService
+        this._userService
           .addJob(job)
           .then(user => this.jobs = user.jobs);
       }
     })
+  }
+
+  public deleteJob(jobToRemove: ScrUserJob) {
+    this._userService.removeJob(jobToRemove)
+      .then((res: ScrUser) => {
+        let index = this.jobs.findIndex((job: ScrUserJob) => job.id === jobToRemove.id);
+
+        if(index > -1) {
+          this.jobs.splice(index, 1);
+        }
+      });
   }
 }

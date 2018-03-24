@@ -20,12 +20,13 @@ export class ScrUserJob {
     let jobs: ScrUserJob[] = objArr.map(mapFnc);
 
     jobs.sort(sortFnc);
-    console.log(jobs)
+
     return jobs;
   }
 
   public static fromObj(obj: any = {}): ScrUserJob {
     return new ScrUserJob(
+      obj.id,
       obj.employer,
       obj.title,
       ScrUserIndustry.fromObject(obj.industry),
@@ -37,6 +38,7 @@ export class ScrUserJob {
   }
 
   constructor(
+    public id?: string,
     public employer?: string,
     public title?: string,
     public industry?: ScrUserIndustry,
