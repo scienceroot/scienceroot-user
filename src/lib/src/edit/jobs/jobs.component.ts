@@ -41,7 +41,7 @@ import {ScrUser} from "../../core/user.model";
             <scr-user-job [job]="job">
             </scr-user-job>
           </div>
-          <div fxFlex="32px">
+          <div fxFlex="40px">
             <button mat-icon-button=""
                     color="accent"
                     (click)="deleteJob(job)">

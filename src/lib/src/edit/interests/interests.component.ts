@@ -41,7 +41,7 @@ import {ScrUser} from "../../core/user.model";
                class="interest">
             <span class="mat-title scr-primary-text">{{ interest.name }}</span>
           </div>
-          <div fxFlex="32px">
+          <div fxFlex="40px">
             <button mat-icon-button=""
                     color="accent"
                     (click)="deleteInterest(interest)">

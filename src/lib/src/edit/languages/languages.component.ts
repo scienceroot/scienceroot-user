@@ -41,7 +41,7 @@ import {ScrUser} from "../../core/user.model";
                 class="language">
             <span class="mat-title scr-primary-text">{{ language.name }}</span>
           </div>
-          <div fxFlex="">
+          <div fxFlex="40px">
             <button mat-icon-button=""
                     color="accent"
                     (click)="deleteLanguage(language)">
