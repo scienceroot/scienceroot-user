@@ -33,6 +33,8 @@ export class ScrUserDetailsInfoComponent {
   public user: ScrUser;
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.user = this.activatedRoute.snapshot.data.user;
+    this.activatedRoute.data.subscribe((data: any) => {
+      this.user = data.user;
+    });
   }
 }
