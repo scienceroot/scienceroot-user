@@ -87,7 +87,7 @@ export class ScrUserEditJobsComponent {
 
   public deleteJob(jobToRemove: ScrUserJob) {
     this._userService.removeJob(jobToRemove)
-      .then((res: ScrUser) => {
+      .then(() => {
         let index = this.jobs.findIndex((job: ScrUserJob) => job.id === jobToRemove.id);
 
         if(index > -1) {

@@ -36,10 +36,18 @@ import {ScrUser} from "../../core/user.model";
 
     <ng-template #languagesList>
       <ng-container *ngFor="let language of languages">
-        <div class="language">
-            <span class="mat-title scr-primary-text">
-               {{ language.name }}
-            </span>
+        <div fxLayout="row">
+          <div  fxFlex=""
+                class="language">
+            <span class="mat-title scr-primary-text">{{ language.name }}</span>
+          </div>
+          <div fxFlex="">
+            <button mat-icon-button=""
+                    color="accent"
+                    (click)="deleteLanguage(language)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </div>
       </ng-container>
     </ng-template>
@@ -58,7 +66,7 @@ export class ScrUserEditLanguagesComponent {
 
   constructor(
     private dialog: MatDialog,
-    private userService: ScrUserService
+    private _userService: ScrUserService
   ) {
   }
 
@@ -68,10 +76,21 @@ export class ScrUserEditLanguagesComponent {
     this.dialogRef = this.dialog.open(ScrUserEditLanguagesAddComponent, config);
     this.dialogRef.afterClosed().subscribe((language: ScrUserLanguage) => {
       if (!!language) {
-        this.userService
+        this._userService
           .addLanguage(language)
           .then((user: ScrUser) => this.languages = user.languages);
       }
     })
+  }
+
+  public deleteLanguage(languageToDelete: ScrUserLanguage) {
+    this._userService.removeLanguage(languageToDelete)
+      .then(() => {
+        let index = this.languages.findIndex((language: ScrUserLanguage) => language.id === languageToDelete.id);
+
+        if(index > -1) {
+          this.languages.splice(index, 1);
+        }
+      })
   }
 }

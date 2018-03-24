@@ -52,6 +52,15 @@ export class ScrUserService {
       .toPromise();
   }
 
+  public removeLanguage(languageToRemove: ScrUserJob): Promise<ScrUser> {
+    let activeUser = this.activeUserService.get();
+    let url: string = ScrUserStore.languagesById(activeUser.uid) + '/' + languageToRemove.id;
+
+    return this.httpClient.delete(url)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
+
   public addJob(newJob: ScrUserJob): Promise<ScrUser> {
     let activeUser = this.activeUserService.get();
     let url: string = ScrUserStore.jobsById(activeUser.uid);
