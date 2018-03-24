@@ -87,4 +87,13 @@ export class ScrUserService {
       .map(res => ScrUser.fromObj(res))
       .toPromise();
   }
+
+  public removeInterest(interestToRemove: ScrUserFieldOfInterest): Promise<ScrUser> {
+    let activeUser = this.activeUserService.get();
+    let url: string = ScrUserStore.interestsById(activeUser.uid) + '/' + interestToRemove.id;
+
+    return this.httpClient.delete(url)
+      .map(res => ScrUser.fromObj(res))
+      .toPromise();
+  }
 }

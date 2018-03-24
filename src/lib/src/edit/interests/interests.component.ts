@@ -36,10 +36,18 @@ import {ScrUser} from "../../core/user.model";
 
     <ng-template #interestsList>
       <ng-container *ngFor="let interest of interests">
-        <div class="interest">
-            <span class="mat-title scr-primary-text">
-               {{ interest.name }}
-            </span>
+        <div fxLayout="row">
+          <div fxFlex=""
+               class="interest">
+            <span class="mat-title scr-primary-text">{{ interest.name }}</span>
+          </div>
+          <div fxFlex="32px">
+            <button mat-icon-button=""
+                    color="accent"
+                    (click)="deleteInterest(interest)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </div>
       </ng-container>
     </ng-template>
@@ -58,7 +66,7 @@ export class ScrUserEditInterestsComponent {
 
   constructor(
     private dialog: MatDialog,
-    private userService: ScrUserService
+    private _userService: ScrUserService
   ) {
   }
 
@@ -68,11 +76,21 @@ export class ScrUserEditInterestsComponent {
     this.dialogRef = this.dialog.open(ScrUserEditInterestsAddComponent, config);
     this.dialogRef.afterClosed().subscribe((interest: ScrUserFieldOfInterest) => {
       if (!!interest) {
-        this.userService
+        this._userService
           .addInterest(interest)
           .then((user: ScrUser) => this.interests = user.interests);
       }
-    })
+    });
   }
 
+  public deleteInterest(interestToRemove: ScrUserFieldOfInterest) {
+    this._userService.removeInterest(interestToRemove)
+      .then(() => {
+        let index = this.interests.findIndex((interest: ScrUserFieldOfInterest) => interest.id === interestToRemove.id);
+
+        if(index > -1) {
+          this.interests.splice(index, 1);
+        }
+      });
+  }
 }
