@@ -37,7 +37,7 @@ import {ScrUser} from "../../core/user.model";
     <ng-template #languagesList>
       <ng-container *ngFor="let language of languages">
         <div class="language">
-            <span class="mat-subheading-2 scr-primary-text">
+            <span class="mat-title scr-primary-text">
                {{ language.name }}
             </span>
         </div>

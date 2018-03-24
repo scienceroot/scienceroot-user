@@ -37,7 +37,7 @@ import {ScrUser} from "../../core/user.model";
     <ng-template #interestsList>
       <ng-container *ngFor="let interest of interests">
         <div class="interest">
-            <span class="mat-subheading-2 scr-primary-text">
+            <span class="mat-title scr-primary-text">
                {{ interest.name }}
             </span>
         </div>
