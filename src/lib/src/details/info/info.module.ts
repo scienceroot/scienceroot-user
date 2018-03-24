@@ -4,13 +4,14 @@ import {CommonModule} from "@angular/common";
 import {ScrUserProfileModule} from "../profile/profile.module";
 import {ScrUserDetailsInfoJobsModule} from "./jobs/jobs.module";
 import {ScrUserDetailsInfoInterestsModule} from "./interests/interests.module";
-import {MatIconModule} from "@angular/material";
+import {MatDividerModule, MatIconModule} from "@angular/material";
 import {ScrUserDetailsInfoLanguageModule} from "./languages/languages.module";
 
 @NgModule({
   imports: [
     CommonModule,
     MatIconModule,
+    MatDividerModule,
     ScrUserProfileModule,
     ScrUserDetailsInfoJobsModule,
     ScrUserDetailsInfoInterestsModule,

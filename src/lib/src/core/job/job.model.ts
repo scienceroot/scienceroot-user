@@ -4,8 +4,24 @@ export class ScrUserJob {
 
   public static fromObjArr(objArr: any[] = []): ScrUserJob[] {
     let mapFnc = (obj: any) => ScrUserJob.fromObj(obj);
+    let sortFnc = (a: ScrUserJob, b: ScrUserJob) => {
+      if((a.hasEnd() && b.hasEnd()) || (!a.hasEnd() && !b.hasEnd())) {
+        if(a.startYear >= b.startYear) {
+          return -1;
+        } else if (a.startYear < b.startYear) {
+          return 1;
+        }
+      } else if(a.hasEnd() && !b.hasEnd()) {
+        return 1;
+      } else if (!a.hasEnd() && b.hasEnd()){
+        return -1;
+      }
+    };
+    let jobs: ScrUserJob[] = objArr.map(mapFnc);
 
-    return objArr.map(mapFnc);
+    jobs.sort(sortFnc);
+    console.log(jobs)
+    return jobs;
   }
 
   public static fromObj(obj: any = {}): ScrUserJob {
@@ -29,5 +45,9 @@ export class ScrUserJob {
     public endMonth?: number,
     public endYear?: number
   ) {
+  }
+
+  public hasEnd(): boolean {
+    return !!this.endMonth && !!this.endYear;
   }
 }

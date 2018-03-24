@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule, MatDialogModule, MatIconModule} from "@angular/material";
 import {ScrUserEditJobsAddModule} from "./add/add.module";
+import {ScrUserJobModule} from "../../core/job/job.module";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {ScrUserEditJobsAddModule} from "./add/add.module";
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    ScrUserEditJobsAddModule
+    ScrUserEditJobsAddModule,
+    ScrUserJobModule
   ],
   declarations: [
     ScrUserEditJobsComponent

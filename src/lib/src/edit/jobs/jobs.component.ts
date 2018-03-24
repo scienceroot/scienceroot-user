@@ -35,20 +35,8 @@ import {ScrUserService} from "../../core/user.service";
 
     <ng-template #jobsList>
       <ng-container *ngFor="let job of jobs">
-        <div class="job">
-            <span class="mat-subheading-2 scr-primary-text">
-               {{ job.title }}
-            </span>
-          <span class="mat-body-1 job--spacer">
-              at
-            </span>
-          <span class="mat-subheading-1">
-              {{ job.employer }}
-            </span>
-          <span class="mat-body-2">
-              ({{ job.industry?.name }})
-            </span>
-        </div>
+        <scr-user-job [job]="job">
+        </scr-user-job>
       </ng-container>
     </ng-template>
   `,

@@ -37,7 +37,7 @@ import {FormControl, Validators} from "@angular/forms";
                     <input  matInput=""
                             [(ngModel)]="user.forename"
                             [formControl]="forenameFormControl"
-                            placeholder="Forename" />
+                            placeholder="Name" />
                     <mat-error *ngIf="forenameFormControl.hasError('required')">
                       Name is <strong>required</strong>
                     </mat-error>

@@ -6,7 +6,7 @@ import {ScrUserLanguage} from "./language/language.model";
 export const SCR_USER_TYPES: ScrUserType[] = [
   {
     name: 'journal',
-    displayName: 'Journal Account',
+    displayName: 'Ecosystem Account',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
     icon: 'search'
   },
@@ -29,7 +29,7 @@ export class ScrUser {
       obj.lastname,
       obj.address,
       obj.roles,
-      obj.jobs,
+      ScrUserJob.fromObjArr(obj.jobs),
       obj.interests,
       obj.languages,
       obj.publicKey

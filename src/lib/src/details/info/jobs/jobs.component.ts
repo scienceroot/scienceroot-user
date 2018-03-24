@@ -6,7 +6,7 @@ import {ScrUser} from "../../../core/user.model";
   template: `
     <div class="jobs">
       <div class="jobs--headline">
-        <span class="mat-headline">Jobs</span>
+        <span class="mat-headline">Work experience</span>
       </div>
       <ng-container *ngIf="user.jobs && user.jobs.length > 0; then jobsList else noJobs;">
       </ng-container>
@@ -21,20 +21,8 @@ import {ScrUser} from "../../../core/user.model";
     
     <ng-template #jobsList>
       <ng-container *ngFor="let job of user.jobs">
-        <div class="job">
-            <span class="mat-subheading-2 scr-primary-text">
-               {{ job.title }}
-            </span>
-          <span class="mat-body-1 job--spacer">
-              at
-            </span>
-          <span class="mat-subheading-1">
-              {{ job.employer }}
-            </span>
-          <span class="mat-body-2">
-              ({{ job.industry?.name }})
-            </span>
-        </div>
+        <scr-user-job [job]="job">
+        </scr-user-job>
       </ng-container>
     </ng-template>
   `,
@@ -44,15 +32,6 @@ import {ScrUser} from "../../../core/user.model";
       width: 24px;
       height: 24px;
       font-size: 24px;
-    }
-
-    .job {
-      margin: 12px 0;
-    }
-
-    .job .job--spacer {
-      display: inline-block;
-      margin: 0 8px;
     }
   `]
 })

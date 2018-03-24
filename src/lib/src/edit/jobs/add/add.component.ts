@@ -13,6 +13,7 @@ import {FormControl} from "@angular/forms";
       <div class="header">
         <span class="mat-headline">Add a job</span>
       </div>
+      <span class="mat-title">Info</span>
       <div  fxLayout="row"
             fxLayoutGap="24px">
         <div fxFlex="">
@@ -32,7 +33,8 @@ import {FormControl} from "@angular/forms";
       </div>
       <div>
         <mat-form-field>
-          <input type="text" placeholder="Industry" 
+          <input type="search" 
+                 placeholder="Industry" 
                  aria-label="Industry" 
                  matInput
                  [formControl]="industryCtr"
@@ -46,6 +48,61 @@ import {FormControl} from "@angular/forms";
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
+      </div>
+      <span class="mat-title">Timespan</span>
+      <div  fxLayout="row"
+            fxLayoutGap="24px">
+        <div fxFlex=""
+             fxFlexAlign="center">
+          <span class="mat-subheading">From</span>
+        </div>
+        <div fxFlex="">
+          <mat-form-field>
+            <input  matInput=""
+                    type="number"
+                    [(ngModel)]="newJob.startMonth"
+                    placeholder="Month"
+                    min="1"
+                    max="12"/>
+          </mat-form-field>
+        </div>
+        <div fxFlex="">
+          <mat-form-field>
+            <input  matInput=""
+                    type="number"
+                    min="1900"
+                    step="1"
+                    [(ngModel)]="newJob.startYear"
+                    placeholder="Year"/>
+          </mat-form-field>
+        </div>
+      </div>
+      <div  fxLayout="row"
+            fxLayoutGap="24px">
+        <div  fxFlex=""
+              fxFlexAlign="center">
+          <span class="mat-subheading">To</span>
+        </div>
+        <div fxFlex="">
+          <mat-form-field>
+            <input  matInput=""
+                    type="number"
+                    [(ngModel)]="newJob.endMonth"
+                    placeholder="Month"
+                    min="1"
+                    max="12"/>
+          </mat-form-field>
+        </div>
+        <div fxFlex="">
+          <mat-form-field>
+            <input  matInput=""
+                    type="number"
+                    min="1900"
+                    step="1"
+                    [(ngModel)]="newJob.endYear"
+                    placeholder="Year"/>
+          </mat-form-field>
+        </div>
       </div>
       <div class="actions">
         <div  fxLayout="row"

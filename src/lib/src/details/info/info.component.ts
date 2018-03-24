@@ -10,10 +10,12 @@ import {ActivatedRoute} from "@angular/router";
         <scr-user-details-info-interests [user]="user">
         </scr-user-details-info-interests>
       </div>
+      <mat-divider></mat-divider>
       <div class="info-section">
         <scr-user-details-info-languages [user]="user">
         </scr-user-details-info-languages>
       </div>
+      <mat-divider></mat-divider>
       <div class="info-section">
         <scr-user-details-info-jobs [user]="user">
         </scr-user-details-info-jobs>
