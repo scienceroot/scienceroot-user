@@ -1,6 +1,6 @@
 {
   "name": "@scienceroot/user",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "./user.umd.js",
   "module": "./user.es5.js",
