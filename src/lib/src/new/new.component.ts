@@ -187,9 +187,9 @@ export class ScrUserNewComponent implements OnInit {
   /**
    * Redirect to edit, if role 'journal'
    *
-   * @param {string} id
-   * @param {string[]} roles
-   * @returns {string[]}
+   * @param id
+   * @param roles
+   * @returns
    */
     private navigationBasedOnRole(id: string, roles: string[]): string[] {
 
