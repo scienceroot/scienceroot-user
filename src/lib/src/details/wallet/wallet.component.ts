@@ -20,7 +20,7 @@ import { Location } from '@angular/common';
     </ng-template>
 
     <ng-template #existingWallet>
-      <scr-wallet-show [publicAddress]="user.publicAddress">
+      <scr-wallet-show [publicKey]="user.publicAddress">
       </scr-wallet-show>
     </ng-template>
   `,

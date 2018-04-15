@@ -47,6 +47,7 @@
       // other libraries
       'rxjs': 'npm:rxjs',
       'tslib': 'npm:tslib/tslib.js',
+      'waves-api': 'npm:waves-api/dist/waves-api.js',
 
       '@bindoc/loading': 'npm:@bindoc/loading/bundles/loading.umd.js',
 

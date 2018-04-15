@@ -42,7 +42,7 @@
     "@angular/material": "5.x.x",
     "@scienceroot/design": "1.x.x",
     "@scienceroot/security": "1.x.x",
-    "@scienceroot/wallet": "1.x.x"
+    "@scienceroot/wallet": "2.x.x"
   },
   "devDependencies": {
     "@angular/animations": "5.x.x",
@@ -60,7 +60,7 @@
     "@angular/router": "5.x.x",
     "@scienceroot/design": "1.x.x",
     "@scienceroot/security": "1.x.x",
-    "@scienceroot/wallet": "1.x.x",
+    "@scienceroot/wallet": "2.x.x",
     "camelcase": "4.1.x",
     "concurrently": "3.5.x",
     "core-js": "2.5.x",
@@ -74,6 +74,7 @@
     "rxjs": "5.5.x",
     "systemjs": "0.21.x",
     "typescript": "2.6.x",
+    "waves-api": "^0.24.2",
     "zone.js": "0.8.x"
   },
   "dependencies": {}

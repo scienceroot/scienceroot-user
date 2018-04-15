@@ -3,26 +3,26 @@
 
 
 "@angular/animations@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fanimations/-/animations-5.2.7.tgz#a99fe128f3809e3f8082441a6e676992b9352db7"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fanimations/-/animations-5.2.9.tgz#220db9fb5a52a193db0023d721b23ddd25a75770"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/cdk@5.x.x":
-  version "5.2.3"
-  resolved "https://npm.scienceroots.com/@angular%2fcdk/-/cdk-5.2.3.tgz#b52e7040e1e6577b593b5d974b80020c1f5babe3"
+  version "5.2.4"
+  resolved "https://npm.scienceroots.com/@angular%2fcdk/-/cdk-5.2.4.tgz#c0a429a8710d8fedb157f546e21cb49d4335f7f7"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/common@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fcommon/-/common-5.2.7.tgz#11bb9f00afe91af8d772ecdff83c2e179f9a67a0"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fcommon/-/common-5.2.9.tgz#beb25d4434498abae56bd8dc2c01ade3f6c45e81"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/compiler-cli@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fcompiler-cli/-/compiler-cli-5.2.7.tgz#3bad9d5e4c25ebc51e1bb67b71b26a97d6d3bbc5"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fcompiler-cli/-/compiler-cli-5.2.9.tgz#36a069937d50a8a294eda233b5b1b2c71139751f"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
@@ -30,14 +30,14 @@
     tsickle "^0.27.2"
 
 "@angular/compiler@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fcompiler/-/compiler-5.2.7.tgz#31dcc7ac18cc23cb115e76c541b982737ff93ec9"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fcompiler/-/compiler-5.2.9.tgz#1d03bc1e8b38c259bc58114d691c2140d244f8f5"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/core@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fcore/-/core-5.2.7.tgz#e5607fc39d90f9fe4fbaaeeeb6cdb9371966bfe3"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fcore/-/core-5.2.9.tgz#3daf13ef9aa754b9954ed21da3eb322e8b20f667"
   dependencies:
     tslib "^1.7.1"
 
@@ -48,38 +48,38 @@
     tslib "^1.7.1"
 
 "@angular/forms@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fforms/-/forms-5.2.7.tgz#a0c41fdb6b8ba2c32653cc3058d5fa47db91fbf8"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fforms/-/forms-5.2.9.tgz#12c45b3a02c398b354f09cc740d914cd904c0c9c"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/http@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fhttp/-/http-5.2.7.tgz#a163f6958f12d2665419123861b0d613c1c82afb"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fhttp/-/http-5.2.9.tgz#2ffea536e181bc97e2867593d57425ea7853285b"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/material@5.x.x":
-  version "5.2.3"
-  resolved "https://npm.scienceroots.com/@angular%2fmaterial/-/material-5.2.3.tgz#ce7e2abb79c0bd16dff7f247b21c5339d02dd949"
+  version "5.2.4"
+  resolved "https://npm.scienceroots.com/@angular%2fmaterial/-/material-5.2.4.tgz#9e823798324283d23ea839156fac5bcb73443d55"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-5.2.7.tgz#91f903c1f73de2fba1004bc31ed1c3117c7f0406"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-5.2.9.tgz#86075b7bb694861f722ceda29aae186b045c6b7d"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser/-/platform-browser-5.2.7.tgz#cfd86040c25380aabf0322ef47aecc61f23cc532"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser/-/platform-browser-5.2.9.tgz#9ee76327b1b3affad68ffa839058661b7704bc2c"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/router@5.x.x":
-  version "5.2.7"
-  resolved "https://npm.scienceroots.com/@angular%2frouter/-/router-5.2.7.tgz#691c375fe32f01bea56d169469ad8f254b136af9"
+  version "5.2.9"
+  resolved "https://npm.scienceroots.com/@angular%2frouter/-/router-5.2.9.tgz#0369df6e60c6da3a5842c6eb35e3958d4ffe727e"
   dependencies:
     tslib "^1.7.1"
 
@@ -88,20 +88,20 @@
   resolved "https://npm.scienceroots.com/@bindoc%2floading/-/loading-1.0.2.tgz#65cacf8981f87ff5ded7d7a46b902c6c459dcd2b"
 
 "@scienceroot/design@1.x.x":
-  version "1.0.3"
-  resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.3.tgz#0a1674cb0165ab74551862c649a652fe3c7e3f42"
+  version "1.0.8"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.8.tgz#525d5387319ff689be22f52a68c160c3fc9581f6"
   dependencies:
     "@bindoc/loading" "1.x.x"
 
 "@scienceroot/security@1.x.x":
-  version "1.0.10"
-  resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.10.tgz#6546d23acb359c9a29917673ee0725bdd883b290"
+  version "1.0.11"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fsecurity/-/security-1.0.11.tgz#b09a69519d373f01daef730973effa1ece4438f4"
 
-"@scienceroot/wallet@1.x.x":
-  version "1.0.5"
-  resolved "https://npm.scienceroots.com/@scienceroot%2fwallet/-/wallet-1.0.5.tgz#35e73cfb6c269b94fe15293ba1c026ceba18368f"
+"@scienceroot/wallet@2.x.x":
+  version "2.0.1"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fwallet/-/wallet-2.0.1.tgz#423724121aa786741fc6a25e63dc02aeeaf3b122"
   dependencies:
-    web3 "0.x.x"
+    waves-api "0.24.x"
 
 "@types/acorn@^4.0.3":
   version "4.0.3"
@@ -230,16 +230,16 @@ asynckit@^0.4.0:
   resolved "https://npm.scienceroots.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
 atob@^2.0.0:
-  version "2.0.3"
-  resolved "https://npm.scienceroots.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
+  version "2.1.0"
+  resolved "https://npm.scienceroots.com/atob/-/atob-2.1.0.tgz#ab2b150e51d7b122b9efc8d7340c06b6c41076bc"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://npm.scienceroots.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
 
 aws4@^1.2.1:
-  version "1.6.0"
-  resolved "https://npm.scienceroots.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+  version "1.7.0"
+  resolved "https://npm.scienceroots.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
 backo2@1.0.2:
   version "1.0.2"
@@ -273,9 +273,9 @@ better-assert@~1.0.0:
   dependencies:
     callsite "1.0.0"
 
-"bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git":
-  version "2.0.7"
-  resolved "git+https://github.com/frozeman/bignumber.js-nolookahead.git#57692b3ecfc98bbdd6b3a516cb2353652ea49934"
+bignumber.js@^4.1.0:
+  version "4.1.0"
+  resolved "https://npm.scienceroots.com/bignumber.js/-/bignumber.js-4.1.0.tgz#db6f14067c140bd46624815a7916c92d9b6c24b1"
 
 binary-extensions@^1.0.0:
   version "1.11.0"
@@ -448,7 +448,11 @@ commander@2.6.0:
   version "2.6.0"
   resolved "https://npm.scienceroots.com/commander/-/commander-2.6.0.tgz#9df7e52fb2a0cb0fb89058ee80c3104225f37e1d"
 
-commander@^2.2.0, commander@~2.14.1:
+commander@^2.2.0:
+  version "2.15.1"
+  resolved "https://npm.scienceroots.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
+
+commander@~2.14.1:
   version "2.14.1"
   resolved "https://npm.scienceroots.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
 
@@ -509,8 +513,8 @@ cookie@0.3.1:
   resolved "https://npm.scienceroots.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
 core-js@2.5.x:
-  version "2.5.3"
-  resolved "https://npm.scienceroots.com/core-js/-/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
+  version "2.5.5"
+  resolved "https://npm.scienceroots.com/core-js/-/core-js-2.5.5.tgz#b14dde936c640c0579a6b50cabcc132dd6127e3b"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -522,9 +526,9 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-crypto-js@^3.1.4:
-  version "3.1.8"
-  resolved "https://npm.scienceroots.com/crypto-js/-/crypto-js-3.1.8.tgz#715f070bf6014f2ae992a98b3929258b713f08d5"
+crypto-js@^3.1.9-1:
+  version "3.1.9-1"
+  resolved "https://npm.scienceroots.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -592,11 +596,7 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://npm.scienceroots.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
 
-depd@1.1.1:
-  version "1.1.1"
-  resolved "https://npm.scienceroots.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
-
-depd@~1.1.0:
+depd@~1.1.0, depd@~1.1.2:
   version "1.1.2"
   resolved "https://npm.scienceroots.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
 
@@ -642,9 +642,15 @@ encodeurl@~1.0.1:
   version "1.0.2"
   resolved "https://npm.scienceroots.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
 
+encoding@^0.1.11:
+  version "0.1.12"
+  resolved "https://npm.scienceroots.com/encoding/-/encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb"
+  dependencies:
+    iconv-lite "~0.4.13"
+
 engine.io-client@~3.1.0:
-  version "3.1.5"
-  resolved "https://npm.scienceroots.com/engine.io-client/-/engine.io-client-3.1.5.tgz#85de17666560327ef1817978f6e3f8101ded2c47"
+  version "3.1.6"
+  resolved "https://npm.scienceroots.com/engine.io-client/-/engine.io-client-3.1.6.tgz#5bdeb130f8b94a50ac5cbeb72583e7a4a063ddfd"
   dependencies:
     component-emitter "1.2.1"
     component-inherit "0.0.3"
@@ -940,8 +946,8 @@ hoek@2.x.x:
   resolved "https://npm.scienceroots.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
 hosted-git-info@^2.1.4:
-  version "2.5.0"
-  resolved "https://npm.scienceroots.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+  version "2.6.0"
+  resolved "https://npm.scienceroots.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
 
 http-errors@~1.5.0:
   version "1.5.1"
@@ -952,13 +958,13 @@ http-errors@~1.5.0:
     statuses ">= 1.3.1 < 2"
 
 http-errors@~1.6.1:
-  version "1.6.2"
-  resolved "https://npm.scienceroots.com/http-errors/-/http-errors-1.6.2.tgz#0a002cc85707192a7e7946ceedc11155f60ec736"
+  version "1.6.3"
+  resolved "https://npm.scienceroots.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
   dependencies:
-    depd "1.1.1"
+    depd "~1.1.2"
     inherits "2.0.3"
-    setprototypeof "1.0.3"
-    statuses ">= 1.3.1 < 2"
+    setprototypeof "1.1.0"
+    statuses ">= 1.4.0 < 2"
 
 http-proxy@1.15.2:
   version "1.15.2"
@@ -974,6 +980,12 @@ http-signature@~1.1.0:
     assert-plus "^0.2.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+iconv-lite@~0.4.13:
+  version "0.4.21"
+  resolved "https://npm.scienceroots.com/iconv-lite/-/iconv-lite-0.4.21.tgz#c47f8733d02171189ebc4a400f3218d348094798"
+  dependencies:
+    safer-buffer "^2.1.0"
 
 immutable@3.8.2, immutable@^3.7.6:
   version "3.8.2"
@@ -1087,6 +1099,10 @@ is-reference@^1.1.0:
   resolved "https://npm.scienceroots.com/is-reference/-/is-reference-1.1.0.tgz#50e6ef3f64c361e2c53c0416cdc9420037f2685b"
   dependencies:
     "@types/estree" "0.0.38"
+
+is-stream@^1.0.1:
+  version "1.1.0"
+  resolved "https://npm.scienceroots.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
 is-typedarray@~1.0.0:
   version "1.0.0"
@@ -1282,8 +1298,8 @@ minimist@1.2.0, minimist@^1.2.0:
     minimist "0.0.8"
 
 moment@*:
-  version "2.21.0"
-  resolved "https://npm.scienceroots.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
+  version "2.22.1"
+  resolved "https://npm.scienceroots.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 ms@0.7.1:
   version "0.7.1"
@@ -1302,12 +1318,19 @@ ms@2.0.0:
   resolved "https://npm.scienceroots.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 nan@^2.3.0:
-  version "2.9.2"
-  resolved "https://npm.scienceroots.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
+  version "2.10.0"
+  resolved "https://npm.scienceroots.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://npm.scienceroots.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+node-fetch@^1.7.3:
+  version "1.7.3"
+  resolved "https://npm.scienceroots.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
 
 node-pre-gyp@^0.6.39:
   version "0.6.39"
@@ -1443,6 +1466,10 @@ parse-glob@^3.0.4:
     is-extglob "^1.0.0"
     is-glob "^2.0.0"
 
+parse-json-bignumber@0.0.2:
+  version "0.0.2"
+  resolved "https://npm.scienceroots.com/parse-json-bignumber/-/parse-json-bignumber-0.0.2.tgz#0e436d93e45e50f0ce860ae2aafcc53096c597df"
+
 parse-json@^2.2.0:
   version "2.2.0"
   resolved "https://npm.scienceroots.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
@@ -1557,8 +1584,8 @@ range-parser@~1.2.0:
   resolved "https://npm.scienceroots.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
 rc@^1.1.7:
-  version "1.2.5"
-  resolved "https://npm.scienceroots.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
+  version "1.2.6"
+  resolved "https://npm.scienceroots.com/rc/-/rc-1.2.6.tgz#eb18989c6d4f4f162c399f79ddd29f3835568092"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"
@@ -1581,15 +1608,15 @@ read-pkg@^1.0.0:
     path-type "^1.0.0"
 
 readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4:
-  version "2.3.5"
-  resolved "https://npm.scienceroots.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
+  version "2.3.6"
+  resolved "https://npm.scienceroots.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.3"
     isarray "~1.0.0"
     process-nextick-args "~2.0.0"
     safe-buffer "~5.1.1"
-    string_decoder "~1.0.3"
+    string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
 readdirp@^2.0.0:
@@ -1736,14 +1763,18 @@ rx@4.1.0:
   resolved "https://npm.scienceroots.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
 rxjs@5.5.x:
-  version "5.5.6"
-  resolved "https://npm.scienceroots.com/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
+  version "5.5.10"
+  resolved "https://npm.scienceroots.com/rxjs/-/rxjs-5.5.10.tgz#fde02d7a614f6c8683d0d1957827f492e09db045"
   dependencies:
     symbol-observable "1.0.1"
 
 safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://npm.scienceroots.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
+
+safer-buffer@^2.1.0:
+  version "2.1.2"
+  resolved "https://npm.scienceroots.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0:
   version "5.5.0"
@@ -1804,9 +1835,9 @@ setprototypeof@1.0.2:
   version "1.0.2"
   resolved "https://npm.scienceroots.com/setprototypeof/-/setprototypeof-1.0.2.tgz#81a552141ec104b88e89ce383103ad5c66564d08"
 
-setprototypeof@1.0.3:
-  version "1.0.3"
-  resolved "https://npm.scienceroots.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
+setprototypeof@1.1.0:
+  version "1.1.0"
+  resolved "https://npm.scienceroots.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
 sigmund@~1.0.0:
   version "1.0.1"
@@ -1874,8 +1905,8 @@ source-map-resolve@^0.5.0:
     urix "^0.1.0"
 
 source-map-support@^0.5.0:
-  version "0.5.3"
-  resolved "https://npm.scienceroots.com/source-map-support/-/source-map-support-0.5.3.tgz#2b3d5fff298cfa4d1afd7d4352d569e9a0158e76"
+  version "0.5.4"
+  resolved "https://npm.scienceroots.com/source-map-support/-/source-map-support-0.5.4.tgz#54456efa89caa9270af7cd624cc2f123e51fbae8"
   dependencies:
     source-map "^0.6.0"
 
@@ -1918,8 +1949,8 @@ spdx-license-ids@^3.0.0:
   resolved "https://npm.scienceroots.com/spdx-license-ids/-/spdx-license-ids-3.0.0.tgz#7a7cd28470cc6d3a1cfe6d66886f6bc430d3ac87"
 
 sshpk@^1.7.0:
-  version "1.13.1"
-  resolved "https://npm.scienceroots.com/sshpk/-/sshpk-1.13.1.tgz#512df6da6287144316dc4c18fe1cf1d940739be3"
+  version "1.14.1"
+  resolved "https://npm.scienceroots.com/sshpk/-/sshpk-1.14.1.tgz#130f5975eddad963f1d56f92b9ac6c51fa9f83eb"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
@@ -1931,9 +1962,9 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
-"statuses@>= 1.3.1 < 2":
-  version "1.4.0"
-  resolved "https://npm.scienceroots.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
+"statuses@>= 1.3.1 < 2", "statuses@>= 1.4.0 < 2":
+  version "1.5.0"
+  resolved "https://npm.scienceroots.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
 
 statuses@~1.3.0, statuses@~1.3.1:
   version "1.3.1"
@@ -1954,9 +1985,9 @@ string-width@^1.0.1, string-width@^1.0.2:
     is-fullwidth-code-point "^1.0.0"
     strip-ansi "^3.0.0"
 
-string_decoder@~1.0.3:
-  version "1.0.3"
-  resolved "https://npm.scienceroots.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
+string_decoder@~1.1.1:
+  version "1.1.1"
+  resolved "https://npm.scienceroots.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
   dependencies:
     safe-buffer "~5.1.0"
 
@@ -2005,8 +2036,8 @@ symbol-observable@1.0.1:
   resolved "https://npm.scienceroots.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
 
 systemjs@0.21.x:
-  version "0.21.0"
-  resolved "https://npm.scienceroots.com/systemjs/-/systemjs-0.21.0.tgz#e3e61dd7beacaae421a52703c9679fb2543862f2"
+  version "0.21.2"
+  resolved "https://npm.scienceroots.com/systemjs/-/systemjs-0.21.2.tgz#1fc17f3a6ac7db47151c4b11fa8185599295b9c1"
 
 tar-pack@^3.4.0:
   version "3.4.1"
@@ -2054,9 +2085,23 @@ tree-kill@^1.1.0:
   version "1.2.0"
   resolved "https://npm.scienceroots.com/tree-kill/-/tree-kill-1.2.0.tgz#5846786237b4239014f05db156b643212d4c6f36"
 
+ts-api-validator@^2.1.0:
+  version "2.1.1"
+  resolved "https://npm.scienceroots.com/ts-api-validator/-/ts-api-validator-2.1.1.tgz#41ad5e6678f897c1a6ee4c4c5700ae4ff7f90425"
+  dependencies:
+    ts-utils "^4.0.2"
+
+ts-utils@^4.0.2:
+  version "4.5.0"
+  resolved "https://npm.scienceroots.com/ts-utils/-/ts-utils-4.5.0.tgz#be3cfde0037b29f251fd1fc4aa212294d83c7656"
+
+ts-utils@^5.3.0:
+  version "5.3.0"
+  resolved "https://npm.scienceroots.com/ts-utils/-/ts-utils-5.3.0.tgz#7319855d46119375cccb43cacca4deb12293507f"
+
 tsickle@^0.27.2:
-  version "0.27.2"
-  resolved "https://npm.scienceroots.com/tsickle/-/tsickle-0.27.2.tgz#f33d46d046f73dd5c155a37922e422816e878736"
+  version "0.27.5"
+  resolved "https://npm.scienceroots.com/tsickle/-/tsickle-0.27.5.tgz#41e1a41a5acf971cbb2b0558a9590779234d591f"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
@@ -2116,10 +2161,6 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://npm.scienceroots.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
-utf8@^2.1.1:
-  version "2.1.2"
-  resolved "https://npm.scienceroots.com/utf8/-/utf8-2.1.2.tgz#1fa0d9270e9be850d9b05027f63519bf46457d96"
-
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://npm.scienceroots.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -2151,15 +2192,16 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-web3@0.x.x:
-  version "0.20.5"
-  resolved "https://npm.scienceroots.com/web3/-/web3-0.20.5.tgz#c5048d35f7bf4e2c4c280ce51fbbbc951290b165"
+waves-api@0.24.x, waves-api@^0.24.2:
+  version "0.24.2"
+  resolved "https://npm.scienceroots.com/waves-api/-/waves-api-0.24.2.tgz#5639637661b5dc30c67246d199dbea45a008b725"
   dependencies:
-    bignumber.js "git+https://github.com/frozeman/bignumber.js-nolookahead.git"
-    crypto-js "^3.1.4"
-    utf8 "^2.1.1"
-    xhr2 "*"
-    xmlhttprequest "*"
+    bignumber.js "^4.1.0"
+    crypto-js "^3.1.9-1"
+    node-fetch "^1.7.3"
+    parse-json-bignumber "0.0.2"
+    ts-api-validator "^2.1.0"
+    ts-utils "^5.3.0"
 
 which-module@^1.0.0:
   version "1.0.0"
@@ -2198,17 +2240,9 @@ ws@~3.3.1:
     safe-buffer "~5.1.0"
     ultron "~1.1.0"
 
-xhr2@*:
-  version "0.1.4"
-  resolved "https://npm.scienceroots.com/xhr2/-/xhr2-0.1.4.tgz#7f87658847716db5026323812f818cadab387a5f"
-
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"
   resolved "https://npm.scienceroots.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
-
-xmlhttprequest@*:
-  version "1.8.0"
-  resolved "https://npm.scienceroots.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
 
 y18n@^3.2.0, y18n@^3.2.1:
   version "3.2.1"
@@ -2255,5 +2289,5 @@ yeast@0.1.2:
   resolved "https://npm.scienceroots.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 zone.js@0.8.x:
-  version "0.8.20"
-  resolved "https://npm.scienceroots.com/zone.js/-/zone.js-0.8.20.tgz#a218c48db09464b19ff6fc8f0d4bb5b1046e185d"
+  version "0.8.26"
+  resolved "https://npm.scienceroots.com/zone.js/-/zone.js-0.8.26.tgz#7bdd72f7668c5a7ad6b118148b4ea39c59d08d2d"
