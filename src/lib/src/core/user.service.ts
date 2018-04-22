@@ -25,8 +25,8 @@ export class ScrUserService {
     return this.httpClient
       .post(url, newUser, {observe: 'response'})
       .map((res: HttpResponse<any>) => {
-        let token = res.headers.get('Authorization');
-        let user: ScrUser = ScrUser.fromObj(res.body);
+        const token = res.headers.get('Authorization');
+        const user: ScrUser = ScrUser.fromObj(res.body);
 
         ScrAuthenticationStore.setToken(token);
 

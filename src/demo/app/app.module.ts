@@ -6,7 +6,12 @@ import {AppComponent} from './app.component';
 import {ScrActiveUserModule, ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {ScrAuthenticationModule, ScrAuthenticationStoreConfig, ScrSecureHttpClientModule} from "@scienceroot/security";
+import {
+  ScrAuthenticationLoginComponent,
+  ScrAuthenticationModule,
+  ScrAuthenticationStoreConfig,
+  ScrSecureHttpClientModule
+} from '@scienceroot/security';
 import {RouterModule} from "@angular/router";
 import {ScrWalletStoreConfig} from "@scienceroot/wallet";
 import {ScrUserLinkDemoModule} from "./link/link.module";
@@ -23,7 +28,8 @@ import {ScrUserLinkDemoModule} from "./link/link.module";
     ScrUserRoutesModule,
     ScrUserDetailsLinkModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/user/new', pathMatch: 'full'}
+      {path: '', redirectTo: '/user/new', pathMatch: 'full'},
+      {path: 'login', component: ScrAuthenticationLoginComponent}
     ]),
     ScrUserLinkDemoModule
   ],
