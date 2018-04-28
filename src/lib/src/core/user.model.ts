@@ -1,3 +1,4 @@
+import {ScrUserContact} from './contact/contact.model';
 import {ScrUserJob} from "./job/job.model";
 import {ScrAddress} from "./address.model";
 import {ScrUserFieldOfInterest} from "./interest/interest.model";
@@ -22,6 +23,7 @@ export class ScrUser {
 
   public static fromObj(obj: any): ScrUser {
     const jobs = !!obj.jobs ? ScrUserJob.fromObjArr(obj.jobs) : [];
+    const contact = !!obj.contact ? ScrUserContact.fromObject(obj.contact) : new ScrUserContact();
 
     return new ScrUser(
       obj.mail,
@@ -30,6 +32,7 @@ export class ScrUser {
       obj.forename,
       obj.lastname,
       obj.address,
+      contact,
       obj.roles,
       jobs,
       obj.interests,
@@ -45,6 +48,7 @@ export class ScrUser {
     public forename?: string,
     public lastname?: string,
     public address?: ScrAddress,
+    public contact?: ScrUserContact,
     public roles?: string[],
     public jobs?: ScrUserJob[],
     public interests?: ScrUserFieldOfInterest[],

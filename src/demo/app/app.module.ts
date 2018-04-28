@@ -28,7 +28,7 @@ import {ScrUserLinkDemoModule} from "./link/link.module";
     ScrUserRoutesModule,
     ScrUserDetailsLinkModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/user/new', pathMatch: 'full'},
+      {path: '', redirectTo: '/user/me', pathMatch: 'full'},
       {path: 'login', component: ScrAuthenticationLoginComponent}
     ]),
     ScrUserLinkDemoModule

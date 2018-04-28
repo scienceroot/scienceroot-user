@@ -64,6 +64,7 @@ export class ScrActiveUserService {
       .map(res => ScrUser.fromObj(res))
       .toPromise()
       .catch((error: Error) => {
+        console.error(error);
         localStorage.clear();
         this.router.navigate(['/login']);
 

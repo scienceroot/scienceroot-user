@@ -1,10 +1,12 @@
 import {NgModule} from "@angular/core";
 import {Route, RouterModule} from "@angular/router";
+import {ScrActiveUserResolver} from '../active/active-user.resolver';
+import {ScrActiveUserModule} from '../active/active.module';
 import {ScrUserNewComponent} from "../new/new.component";
 import {ScrUserCoreModule} from "./core.module";
 import {ScrTermsAndConditionsComponent} from "../terms/terms.component";
 import {ScrTermsAndConditionsModule} from "../terms/terms.module";
-import {ScrUserResolver} from "./user.resolver";
+import {ScrUserResolver} from './user.resolver';
 import {ScrUserDetailsInfoComponent} from "../details/info/info.component";
 import {ScrUserDetailsModule} from "../details/details.module";
 import {ScrAuthenticationGuard, ScrAuthenticationLoginComponent, ScrAuthenticationModule} from "@scienceroot/security";
@@ -30,6 +32,14 @@ const USER_ROUTES: Route[] = [
       {
         path: 'terms',
         component: ScrTermsAndConditionsComponent
+      },
+      {
+        path: 'me',
+        canActivate: [ScrAuthenticationGuard],
+        resolve: {
+          user: ScrActiveUserResolver
+        },
+        component: ScrUserDetailsInfoComponent
       },
       {
         path: ':userId',
@@ -68,6 +78,7 @@ const USER_ROUTES: Route[] = [
   imports: [
     ScrAuthenticationModule,
     ScrUserCoreModule,
+    ScrActiveUserModule,
     ScrUserDetailsModule,
     ScrUserEditModule,
     ScrTermsAndConditionsModule,

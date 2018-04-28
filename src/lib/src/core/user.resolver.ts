@@ -1,4 +1,5 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
+import {ScrActiveUserService} from '../..';
 import {ScrUser} from "./user.model";
 import {Observable} from "rxjs/Observable";
 import {Injectable} from "@angular/core";

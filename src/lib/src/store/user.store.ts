@@ -14,6 +14,12 @@ export class ScrUserStore {
     return `${config.base}/${userId}`;
   }
 
+  public static contactById(userId: string): string {
+    let config = ScrUserStoreConfigModel.fetch();
+
+    return `${config.base}/${userId}/contact`;
+  }
+
   public static jobsById(userId: string): string {
     let config = ScrUserStoreConfigModel.fetch();
 

@@ -16,13 +16,21 @@ import {ActivatedRoute} from "@angular/router";
       </scr-user-edit-wallet-info>
     </div>
     <div class="section">
+      <scr-user-contact-edit  [contact]="user.contact"
+                              [userId]="user.uid"> 
+      </scr-user-contact-edit>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="section">
       <scr-user-edit-interests [interests]="user.interests">
       </scr-user-edit-interests>  
     </div>
+    <mat-divider></mat-divider>
     <div class="section">
       <scr-user-edit-languages [languages]="user.languages">
       </scr-user-edit-languages>
     </div>
+    <mat-divider></mat-divider>
     <div class="section">
       <scr-user-edit-jobs [jobs]="user.jobs">
       </scr-user-edit-jobs>
