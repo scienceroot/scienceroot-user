@@ -7,6 +7,11 @@ import {ActivatedRoute} from "@angular/router";
   template: `
     <scr-user-profile [user]="user">
       <div class="info-section">
+        <scr-user-contact [contact]="user.contact">
+        </scr-user-contact>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="info-section">
         <scr-user-details-info-interests [user]="user">
         </scr-user-details-info-interests>
       </div>

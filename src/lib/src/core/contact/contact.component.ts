@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ScrUserContact} from './contact.model';
 
 @Component({
@@ -10,7 +10,7 @@ import {ScrUserContact} from './contact.model';
           <span class="mat-caption">Skype</span>
         </div>
         <div fxFlex="">
-          <span class="mat-body-1">{{ contact.skype }}</span>
+          <span class="mat-body-2">{{ contact.skype }}</span>
         </div>
       </div>
       <div fxLayout="row">
@@ -18,24 +18,39 @@ import {ScrUserContact} from './contact.model';
           <span class="mat-caption">Phone</span>
         </div>
         <div fxFlex="">
-          <span class="mat-body-1">{{ contact.phone }}</span>
+          <span class="mat-body-2">{{ contact.phone }}</span>
         </div>
       </div>
-      <div fxLayout="row">
-        <div fxFlex="64px">
-          <span class="mat-caption">Twitter</span>
+      <ng-container *ngIf="!!contact.twitter">
+        <div fxLayout="row">
+          <div fxFlex="64px">
+            <span class="mat-caption">Twitter</span>
+          </div>
+          <div fxFlex="">
+            <a  class="mat-body-2"
+                [href]="twitterLink"
+                target="_blank"
+                rel="noopener">
+              <span>{{ contact.twitter }}</span>
+            </a>
+          </div>
         </div>
-        <div fxFlex="">
-          <span class="mat-body-1">{{ contact.twitter }}</span>
-        </div>
-      </div>
+      </ng-container>
     </div>
   `,
   styles: [`
   
   `]
 })
-export class ScrUserContactComponent {
+export class ScrUserContactComponent implements OnInit {
 
   @Input() contact: ScrUserContact;
+
+  public twitterLink: string;
+
+  ngOnInit(): void {
+    if (!!this.contact) {
+      this.twitterLink = 'https://twitter.com/' + this.contact.twitter
+    }
+  }
 }

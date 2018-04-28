@@ -1,9 +1,14 @@
+import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {ScrUserContactComponent} from './contact.component';
 import {ScrUserContactService} from './contact.service';
 
 @NgModule({
-  imports: [],
+  imports: [
+    CommonModule,
+    FlexLayoutModule
+  ],
   declarations: [
     ScrUserContactComponent
   ],

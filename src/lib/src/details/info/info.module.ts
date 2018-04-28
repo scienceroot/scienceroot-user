@@ -1,4 +1,5 @@
 import {NgModule} from "@angular/core";
+import {ScrUserContactModule} from '../../core/contact/contact.module';
 import {ScrUserDetailsInfoComponent} from "./info.component";
 import {CommonModule} from "@angular/common";
 import {ScrUserProfileModule} from "../profile/profile.module";
@@ -12,6 +13,7 @@ import {ScrUserDetailsInfoLanguageModule} from "./languages/languages.module";
     CommonModule,
     MatIconModule,
     MatDividerModule,
+    ScrUserContactModule,
     ScrUserProfileModule,
     ScrUserDetailsInfoJobsModule,
     ScrUserDetailsInfoInterestsModule,
