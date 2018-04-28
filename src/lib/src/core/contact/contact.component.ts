@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {ScrUserContact} from './contact.model';
 
 @Component({
@@ -10,7 +11,10 @@ import {ScrUserContact} from './contact.model';
           <span class="mat-caption">Skype</span>
         </div>
         <div fxFlex="">
-          <span class="mat-body-2">{{ contact.skype }}</span>
+          <a  class="mat-body-2"
+              [href]="skypeLink">
+            <span>{{ contact.skype }}</span>
+          </a>
         </div>
       </div>
       <div fxLayout="row">
@@ -18,7 +22,10 @@ import {ScrUserContact} from './contact.model';
           <span class="mat-caption">Phone</span>
         </div>
         <div fxFlex="">
-          <span class="mat-body-2">{{ contact.phone }}</span>
+          <a  class="mat-body-2"
+              [href]="phoneLink">
+            {{ contact.phone }}
+          </a>
         </div>
       </div>
       <ng-container *ngIf="!!contact.twitter">
@@ -47,10 +54,17 @@ export class ScrUserContactComponent implements OnInit {
   @Input() contact: ScrUserContact;
 
   public twitterLink: string;
+  public phoneLink: string;
+  public skypeLink: SafeUrl;
+
+  constructor(private _sanitizer: DomSanitizer) {
+  }
 
   ngOnInit(): void {
     if (!!this.contact) {
-      this.twitterLink = 'https://twitter.com/' + this.contact.twitter
+      this.skypeLink = this._sanitizer.bypassSecurityTrustUrl('skype:' + this.contact.skype);
+      this.twitterLink = 'https://twitter.com/' + this.contact.twitter;
+      this.phoneLink = 'tel:' + this.contact.phone;
     }
   }
 }
