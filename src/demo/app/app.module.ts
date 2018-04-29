@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import {ScrFeedStoreConfig} from '@scienceroot/feed';
 
 import {AppComponent} from './app.component';
 import {ScrActiveUserModule, ScrUserDetailsLinkModule, ScrUserRoutesModule, ScrUserStoreConfigModel} from "user";
@@ -43,6 +44,8 @@ export class AppModule {
   //private host: string = 'http://localhost:8080';
 
   constructor() {
+    new ScrFeedStoreConfig(`${this.host}/posts/`).save();
+
     new ScrAuthenticationStoreConfig(
       'scrAuthToken',
       `${this.host}/register`,

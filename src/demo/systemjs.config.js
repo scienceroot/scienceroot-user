@@ -54,6 +54,7 @@
 
       '@bindoc/loading': 'npm:@bindoc/loading/bundles/loading.umd.js',
 
+      '@scienceroot/feed': 'npm:@scienceroot/feed/bundles/scienceroot-feed.umd.js',
       '@scienceroot/design': 'npm:@scienceroot/design/bundles/design.umd.js',
       '@scienceroot/security': 'npm:@scienceroot/security/bundles/security.umd.js',
       '@scienceroot/wallet': 'npm:@scienceroot/wallet/bundles/wallet.umd.js'
