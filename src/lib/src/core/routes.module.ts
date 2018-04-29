@@ -2,6 +2,8 @@ import {NgModule} from "@angular/core";
 import {Route, RouterModule} from "@angular/router";
 import {ScrActiveUserResolver} from '../active/active-user.resolver';
 import {ScrActiveUserModule} from '../active/active.module';
+import {ScrUserDetailsFollowedByComponent} from '../details/followedBy/followedBy.component';
+import {ScrUserDetailsFollowsComponent} from '../details/follows/follows.component';
 import {ScrUserNewComponent} from "../new/new.component";
 import {ScrUserCoreModule} from "./core.module";
 import {ScrTermsAndConditionsComponent} from "../terms/terms.component";
@@ -51,6 +53,22 @@ const USER_ROUTES: Route[] = [
               user: ScrUserResolver
             },
             component: ScrUserDetailsInfoComponent
+          },
+          {
+            path: 'followers',
+            canActivate: [ScrAuthenticationGuard],
+            resolve: {
+              user: ScrUserResolver
+            },
+            component: ScrUserDetailsFollowedByComponent
+          },
+          {
+            path: 'followedBy',
+            canActivate: [ScrAuthenticationGuard],
+            resolve: {
+              user: ScrUserResolver
+            },
+            component: ScrUserDetailsFollowsComponent
           },
           {
             path: 'wallet',

@@ -32,6 +32,14 @@ export class ScrUserProfileMenuComponent implements OnInit {
         path: ['/user', this.user.uid, 'info']
       },
       {
+        displayName: 'Follows',
+        path: ['/user', this.user.uid, 'followedBy']
+      },
+      {
+        displayName: 'Followers',
+        path: ['/user', this.user.uid, 'followers']
+      },
+      {
         displayName: 'Wallet',
         path: ['/user', this.user.uid, 'wallet']
       }

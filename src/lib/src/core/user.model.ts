@@ -21,6 +21,10 @@ export const SCR_USER_TYPES: ScrUserType[] = [
 
 export class ScrUser {
 
+  public static fromObjArr(objArr: any[] = []): ScrUser[] {
+    return objArr.map(ScrUser.fromObj);
+  }
+
   public static fromObj(obj: any): ScrUser {
     const jobs = !!obj.jobs ? ScrUserJob.fromObjArr(obj.jobs) : [];
     const contact = !!obj.contact ? ScrUserContact.fromObject(obj.contact) : new ScrUserContact();
