@@ -8,7 +8,7 @@ import {ScrUser} from '../../core/user.model';
   template: `
     <scr-user-profile [user]="user">
       <div class="mat-headline">
-        Follows
+        Followers
       </div>
       <scr-loading [waitFor]="followedByReq">
         <div onFinish>
