@@ -24,14 +24,10 @@ import {ScrActiveUserService} from "../../../active/active-user.service";
           </span>
         </div>
       </div>
-      <div fxFlex="64px">
-        <ng-container *ngIf="user.uid === activeUser.uid">
-          <a  mat-icon-button=""
-              [routerLink]="['/user', user.uid, 'edit']"
-              color="accent">
-            <mat-icon>edit</mat-icon>
-          </a>
-        </ng-container>
+      <div  fxFlex="100px"
+            fxFlexAlign="center">
+        <scr-user-follow-button [userId]="user.uid">
+        </scr-user-follow-button>
       </div>
     </div>
   `,
