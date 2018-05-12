@@ -1,5 +1,5 @@
-import {NgModule} from "@angular/core";
-import {ScrIndustryService} from "./industry.service";
+import {NgModule} from '@angular/core';
+import {ScrIndustryService} from './industry.service';
 
 export * from './industry.model';
 export * from './industry.service';

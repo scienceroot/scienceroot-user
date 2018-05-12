@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core";
-import {ScrUserJobService} from "./job.service";
-import {ScrUserJobComponent} from "./job.component";
-import {CommonModule} from "@angular/common";
+import {NgModule} from '@angular/core';
+import {ScrUserJobService} from './job.service';
+import {ScrUserJobComponent} from './job.component';
+import {CommonModule} from '@angular/common';
 
 export * from './job.model';
 export * from './job.service';

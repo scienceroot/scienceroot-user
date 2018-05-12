@@ -1,22 +1,22 @@
-import {NgModule} from "@angular/core";
-import {Route, RouterModule} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {Route, RouterModule} from '@angular/router';
 import {ScrActiveUserResolver} from '../active/active-user.resolver';
 import {ScrActiveUserModule} from '../active/active.module';
 import {ScrUserDetailsFollowedByComponent} from '../details/followedBy/followedBy.component';
 import {ScrUserDetailsFollowsComponent} from '../details/follows/follows.component';
 import {ScrUserDetailsNewsfeedComponent} from '../details/newsfeed/newsfeed.component';
 import {ScrUserDetailsNewsfeedModule} from '../details/newsfeed/newsfeed.module';
-import {ScrUserNewComponent} from "../new/new.component";
-import {ScrUserCoreModule} from "./core.module";
-import {ScrTermsAndConditionsComponent} from "../terms/terms.component";
-import {ScrTermsAndConditionsModule} from "../terms/terms.module";
+import {ScrUserNewComponent} from '../new/new.component';
+import {ScrUserCoreModule} from './core.module';
+import {ScrTermsAndConditionsComponent} from '../terms/terms.component';
+import {ScrTermsAndConditionsModule} from '../terms/terms.module';
 import {ScrUserResolver} from './user.resolver';
-import {ScrUserDetailsInfoComponent} from "../details/info/info.component";
-import {ScrUserDetailsModule} from "../details/details.module";
-import {ScrAuthenticationGuard, ScrAuthenticationLoginComponent, ScrAuthenticationModule} from "@scienceroot/security";
-import {ScrUserEditComponent} from "../edit/edit.component";
-import {ScrUserEditModule} from "../edit/edit.module";
-import {ScrUserWalletComponent} from "../details/wallet/wallet.component";
+import {ScrUserDetailsInfoComponent} from '../details/info/info.component';
+import {ScrUserDetailsModule} from '../details/details.module';
+import {ScrAuthenticationGuard, ScrAuthenticationLoginComponent, ScrAuthenticationModule} from '@scienceroot/security';
+import {ScrUserEditComponent} from '../edit/edit.component';
+import {ScrUserEditModule} from '../edit/edit.module';
+import {ScrUserWalletComponent} from '../details/wallet/wallet.component';
 
 const USER_ROUTES: Route[] = [
   {

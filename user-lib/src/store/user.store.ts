@@ -1,15 +1,15 @@
-import {ScrUserStoreConfigModel} from "./user-store-config.model";
+import {ScrUserStoreConfigModel} from './user-store-config.model';
 
 export class ScrUserStore {
 
   public static register(): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return config.register;
   }
 
   public static byId(userId: string): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return `${config.base}/${userId}`;
   }
@@ -27,31 +27,31 @@ export class ScrUserStore {
   }
 
   public static languagesById(userId: string): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return `${ScrUserStore.byId(userId)}/languages`;
   }
 
   public static getMe(): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return `${config.base}/me`;
   }
 
   public static industry(): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return config.industry;
   }
 
   public static interest(): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return config.interest;
   }
 
   public static language(): string {
-    let config = ScrUserStoreConfigModel.fetch();
+    const config = ScrUserStoreConfigModel.fetch();
 
     return config.language;
   }
@@ -74,5 +74,9 @@ export class ScrUserStore {
 
   public static follows(userId: string): string {
     return `${ScrUserStore.byId(userId)}/follows`;
+  }
+
+  public static address(userId: string): string {
+    return `${ScrUserStore.byId(userId)}/publickey`;
   }
 }

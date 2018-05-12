@@ -1,6 +1,6 @@
-import {NgModule} from "@angular/core";
-import {ScrUserNewModule} from "../new/new.module";
-import {ScrUserService} from "./user.service";
+import {NgModule} from '@angular/core';
+import {ScrUserNewModule} from '../new/new.module';
+import {ScrUserService} from './user.service';
 
 export * from './user.model';
 export * from './user.resolver';
