@@ -16,6 +16,9 @@ cd user-lib
 npm version ${NEXT_VERSION}
 cd ..
 
+git add user-lib/package.json
+git commit -m "bumped version"
+
 # STEP BUILD
 set -e  # terminates on error
 npm run build:lib
