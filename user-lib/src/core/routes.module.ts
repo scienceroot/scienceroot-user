@@ -49,6 +49,11 @@ const USER_ROUTES: Route[] = [
         path: ':userId',
         children: [
           {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'info'
+          },
+          {
             path: 'info',
             canActivate: [ScrAuthenticationGuard],
             resolve: {
