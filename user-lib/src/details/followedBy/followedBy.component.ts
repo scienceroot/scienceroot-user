@@ -27,13 +27,25 @@ import {ScrUser} from '../../core/user.model';
     </ng-template>
 
     <ng-template #list>
-      <ng-container *ngFor="let user of (followedByReq | async)">
-        <div>
-          <div>
-            <span>{{user.forename}} {{user.lastname}}</span>
+      <div fxLayout="column"
+           fxLayoutGap="16px">
+        <ng-container *ngFor="let user of (followedByReq | async)">
+          <div fxFlex="">
+            <div fxLayout="row">
+              <div fxFlex="">
+                <span>{{user.forename}} {{user.lastname}}</span>
+              </div>
+              <div fxFlex="75px">
+                <a  mat-raised-button=""
+                    color="accent"
+                    [routerLink]="['/user', user.uid]">
+                  Profile
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </ng-container>
+        </ng-container>
+      </div>
     </ng-template>
   `,
   styles: [`
