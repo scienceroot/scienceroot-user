@@ -1,6 +1,6 @@
 {
   "name": "@scienceroot/user",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
     "dest": "../dist/user-lib",
